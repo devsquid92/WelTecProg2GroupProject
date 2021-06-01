@@ -104,7 +104,7 @@ namespace LibraryMgmWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 353);
+            this.ClientSize = new System.Drawing.Size(336, 353);
             this.Controls.Add(this.ctgryTextBox);
             this.Controls.Add(this.rentResultLabel);
             this.Controls.Add(this.confirmRentButton);

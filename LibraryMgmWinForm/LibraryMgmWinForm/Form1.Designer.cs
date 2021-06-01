@@ -87,6 +87,7 @@ namespace LibraryMgmWinForm
             this.itemListBox.Name = "itemListBox";
             this.itemListBox.Size = new System.Drawing.Size(301, 259);
             this.itemListBox.TabIndex = 4;
+            this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged);
             // 
             // titleLabel
             // 
@@ -185,6 +186,7 @@ namespace LibraryMgmWinForm
             this.addItemButton.TabIndex = 16;
             this.addItemButton.Text = "Add Item";
             this.addItemButton.UseVisualStyleBackColor = true;
+            this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
             // 
             // deleteItemButton
             // 
@@ -206,7 +208,7 @@ namespace LibraryMgmWinForm
             // 
             // memberReportButton
             // 
-            this.memberReportButton.Location = new System.Drawing.Point(70, 368);
+            this.memberReportButton.Location = new System.Drawing.Point(13, 367);
             this.memberReportButton.Name = "memberReportButton";
             this.memberReportButton.Size = new System.Drawing.Size(109, 23);
             this.memberReportButton.TabIndex = 19;
