@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace LibraryMgmWinForm
 {
-    public partial class Form1 : Form
+    public partial class LibraryManagement : Form
     {
         SortedDictionary<string, Items> itemInfo = new SortedDictionary<string, Items>();
-        static string[] headings = new string[6];
+        static string[] headings = new string[5];
 
         Items selectedItem = new Items();
 
-        public Form1()
+        public LibraryManagement()
         {
             InitializeComponent();
 
-            var path = @"../../../datafiles/Items.csv";
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv"; 
             string[] lines = System.IO.File.ReadAllLines(path);
 
             foreach (string line in lines)
@@ -55,23 +55,28 @@ namespace LibraryMgmWinForm
         private void displayItemsInListBox()
         {
             itemListBox.DataSource = new BindingSource(itemInfo, null);
-            itemListBox.ValueMember = "key";
+
+            //display the entries by key. Read about Listbox control here      
+
+            itemListBox.ValueMember = "Key";
+
         }
 
-        private void itemListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void itemListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (itemInfo.ContainsKey(itemListBox.SelectedValue.ToString()))
                 selectedItem = itemInfo[itemListBox.SelectedValue.ToString()];
 
 
-            searchResultLabel.Text = "Search Result(s): " + itemListBox.Items.Count.ToString();
+            avaLabel.Text = itemListBox.Items.Count.ToString();
 
 
-            titleTextBox.Text = selectedItem.Title.ToString();
-            IsbnTextBox.Text = selectedItem.Isbn.ToString();
-            authorTextBox.Text = selectedItem.Author.ToString();
+
+            isbnTextBox.Text = selectedItem.Isbn;
+            titleTextBox.Text = selectedItem.Title;
+            authorTextBox.Text = selectedItem.Author;
             yearTextBox.Text = selectedItem.YearPublished.ToString();
-            categoryTextBox.Text = selectedItem.Category.ToString();
+            categoryTextBox.Text = selectedItem.Category;
         }
 
         private void addItemButton_Click(object sender, EventArgs e)
@@ -100,8 +105,8 @@ namespace LibraryMgmWinForm
 
         private void saveEditButton_Click(object sender, EventArgs e)
         {
-            selectedItem.Title = titleTextBox.Text;
-            selectedItem.Isbn = IsbnTextBox.Text;
+            
+            selectedItem.Isbn = isbnTextBox.Text;
             selectedItem.Author = authorTextBox.Text;
             selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
             selectedItem.Category = categoryTextBox.Text;

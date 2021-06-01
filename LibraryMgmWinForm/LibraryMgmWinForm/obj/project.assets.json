@@ -8,23 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jm.ramirez\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\jmram\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jm.ramirez\\Source\\Repos\\devsquid92\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
+      "projectUniqueName": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
       "projectName": "LibraryMgmWinForm",
-      "projectPath": "C:\\Users\\jm.ramirez\\Source\\Repos\\devsquid92\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
-      "packagesPath": "C:\\Users\\jm.ramirez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jm.ramirez\\Source\\Repos\\devsquid92\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\obj\\",
+      "projectPath": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
+      "packagesPath": "C:\\Users\\jmram\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jm.ramirez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jmram\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -67,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

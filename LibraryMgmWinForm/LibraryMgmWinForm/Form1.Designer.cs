@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryMgmWinForm
 {
-    partial class Form1
+    partial class LibraryManagement
     {
         /// <summary>
         ///  Required designer variable.
@@ -38,7 +38,7 @@ namespace LibraryMgmWinForm
             this.yearLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
             this.itemStockLabel = new System.Windows.Forms.Label();
-            this.IsbnTextBox = new System.Windows.Forms.TextBox();
+            this.isbnTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.authorTextBox = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@ namespace LibraryMgmWinForm
             this.searchResultLabel = new System.Windows.Forms.Label();
             this.ctgryTextBox = new System.Windows.Forms.TextBox();
             this.noSearchResultLabel = new System.Windows.Forms.Label();
+            this.avaLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // searchLabel
@@ -88,8 +89,8 @@ namespace LibraryMgmWinForm
             this.itemListBox.Location = new System.Drawing.Point(12, 60);
             this.itemListBox.Name = "itemListBox";
             this.itemListBox.Size = new System.Drawing.Size(301, 259);
-            this.itemListBox.TabIndex = 4;
-            this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged);
+            this.itemListBox.TabIndex = 27;
+            this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged_1);
             // 
             // titleLabel
             // 
@@ -136,12 +137,12 @@ namespace LibraryMgmWinForm
             this.itemStockLabel.TabIndex = 9;
             this.itemStockLabel.Text = "Stock";
             // 
-            // IsbnTextBox
+            // isbnTextBox
             // 
-            this.IsbnTextBox.Location = new System.Drawing.Point(437, 100);
-            this.IsbnTextBox.Name = "IsbnTextBox";
-            this.IsbnTextBox.Size = new System.Drawing.Size(100, 23);
-            this.IsbnTextBox.TabIndex = 10;
+            this.isbnTextBox.Location = new System.Drawing.Point(437, 100);
+            this.isbnTextBox.Name = "isbnTextBox";
+            this.isbnTextBox.Size = new System.Drawing.Size(100, 23);
+            this.isbnTextBox.TabIndex = 10;
             // 
             // titleTextBox
             // 
@@ -261,11 +262,21 @@ namespace LibraryMgmWinForm
             this.noSearchResultLabel.TabIndex = 25;
             this.noSearchResultLabel.Text = "No Result";
             // 
-            // Form1
+            // avaLabel
+            // 
+            this.avaLabel.AutoSize = true;
+            this.avaLabel.Location = new System.Drawing.Point(237, 42);
+            this.avaLabel.Name = "avaLabel";
+            this.avaLabel.Size = new System.Drawing.Size(55, 15);
+            this.avaLabel.TabIndex = 26;
+            this.avaLabel.Text = "Available";
+            // 
+            // LibraryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 402);
+            this.Controls.Add(this.avaLabel);
             this.Controls.Add(this.ctgryTextBox);
             this.Controls.Add(this.searchResultLabel);
             this.Controls.Add(this.saveEditButton);
@@ -279,7 +290,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.authorTextBox);
             this.Controls.Add(this.yearTextBox);
             this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(this.IsbnTextBox);
+            this.Controls.Add(this.isbnTextBox);
             this.Controls.Add(this.itemStockLabel);
             this.Controls.Add(this.isbnLabel);
             this.Controls.Add(this.yearLabel);
@@ -290,7 +301,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.noSearchResultLabel);
-            this.Name = "Form1";
+            this.Name = "LibraryManagement";
             this.Text = "LibraryManagement - Admin";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -308,7 +319,7 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.Label isbnLabel;
         private System.Windows.Forms.Label itemStockLabel;
-        private System.Windows.Forms.TextBox IsbnTextBox;
+        private System.Windows.Forms.TextBox isbnTextBox;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox yearTextBox;
         private System.Windows.Forms.TextBox authorTextBox;
@@ -323,6 +334,7 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.Label searchResultLabel;
         private System.Windows.Forms.TextBox ctgryTextBox;
         private System.Windows.Forms.Label noSearchResultLabel;
+        private System.Windows.Forms.Label avaLabel;
     }
 }
 
