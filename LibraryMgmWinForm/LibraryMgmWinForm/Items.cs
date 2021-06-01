@@ -12,6 +12,7 @@ namespace LibraryMgmWinForm
         private string title;
         private string author;
         private int yearPublished;
+        private string category;
 
 
         // to do: this field does not belong here, should be transfered to Student class.
@@ -21,6 +22,7 @@ namespace LibraryMgmWinForm
         public string Title { get => title; set => title = value; }
         public string Author { get => author; set => author = value; }
         public int YearPublished { get => yearPublished; set => yearPublished = value; }
+        public string Category { get => category; set => category = value; }
 
 
 

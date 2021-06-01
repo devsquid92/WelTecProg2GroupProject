@@ -52,6 +52,7 @@ namespace LibraryMgmWinForm
             this.saveEditButton = new System.Windows.Forms.Button();
             this.searchResultLabel = new System.Windows.Forms.Label();
             this.ctgryTextBox = new System.Windows.Forms.TextBox();
+            this.noSearchResultLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // searchLabel
@@ -69,6 +70,7 @@ namespace LibraryMgmWinForm
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 23);
             this.searchBox.TabIndex = 1;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // categoryLabel
             // 
@@ -232,6 +234,7 @@ namespace LibraryMgmWinForm
             this.saveEditButton.TabIndex = 22;
             this.saveEditButton.Text = "Save";
             this.saveEditButton.UseVisualStyleBackColor = true;
+            this.saveEditButton.Click += new System.EventHandler(this.saveEditButton_Click);
             // 
             // searchResultLabel
             // 
@@ -248,6 +251,15 @@ namespace LibraryMgmWinForm
             this.ctgryTextBox.Name = "ctgryTextBox";
             this.ctgryTextBox.Size = new System.Drawing.Size(100, 23);
             this.ctgryTextBox.TabIndex = 24;
+            // 
+            // noSearchResultLabel
+            // 
+            this.noSearchResultLabel.AutoSize = true;
+            this.noSearchResultLabel.Location = new System.Drawing.Point(13, 42);
+            this.noSearchResultLabel.Name = "noSearchResultLabel";
+            this.noSearchResultLabel.Size = new System.Drawing.Size(58, 15);
+            this.noSearchResultLabel.TabIndex = 25;
+            this.noSearchResultLabel.Text = "No Result";
             // 
             // Form1
             // 
@@ -277,6 +289,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
+            this.Controls.Add(this.noSearchResultLabel);
             this.Name = "Form1";
             this.Text = "LibraryManagement - Admin";
             this.ResumeLayout(false);
@@ -309,6 +322,7 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.Button saveEditButton;
         private System.Windows.Forms.Label searchResultLabel;
         private System.Windows.Forms.TextBox ctgryTextBox;
+        private System.Windows.Forms.Label noSearchResultLabel;
     }
 }
 

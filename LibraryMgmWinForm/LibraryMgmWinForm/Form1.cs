@@ -38,7 +38,8 @@ namespace LibraryMgmWinForm
                     {
                         Isbn = info[1],
                         Author = info[2],
-                        YearPublished = Int32.Parse(info[3])
+                        YearPublished = Int32.Parse(info[3]),
+                        Category = info[4]
                     });
 
                 }
@@ -70,6 +71,7 @@ namespace LibraryMgmWinForm
             IsbnTextBox.Text = selectedItem.Isbn.ToString();
             authorTextBox.Text = selectedItem.Author.ToString();
             yearTextBox.Text = selectedItem.YearPublished.ToString();
+            categoryTextBox.Text = selectedItem.Category.ToString();
         }
 
         private void addItemButton_Click(object sender, EventArgs e)
@@ -88,10 +90,65 @@ namespace LibraryMgmWinForm
                 {
                     Isbn = null,
                     Author = null,
-                    YearPublished = 0
+                    YearPublished = 0,
+                    Category = null
                 });
-            {
 
+            Program.newItemName = null;
+            displayItemsInListBox();
+        }
+
+        private void saveEditButton_Click(object sender, EventArgs e)
+        {
+            selectedItem.Title = titleTextBox.Text;
+            selectedItem.Isbn = IsbnTextBox.Text;
+            selectedItem.Author = authorTextBox.Text;
+            selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
+            selectedItem.Category = categoryTextBox.Text;
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if(searchBox.Text != "")
+            {
+                if(searchBox.Text.Length == 1)
+                {
+                    searchBox.Text = searchBox.Text.ToString().ToUpper();
+                    searchBox.Select(searchBox.Text.Length, 0);
+                }
+
+
+                var filtered = itemInfo.
+                    Where(i => i.Key.Contains(searchBox.Text)).ToDictionary(i => i.Key, i => i.Value);
+
+                if(filtered.Count > 0)
+                {
+                    itemListBox.DataSource = new BindingSource(filtered, null);
+                    itemListBox.ValueMember = "Key";
+
+
+                    noSearchResultLabel.Visible = false;
+
+                    searchResultLabel.Visible = true;
+
+                    if (filtered.Count == 1) 
+                        searchResultLabel.Text = "Search Result(s): " + filtered.Count;
+
+                    else
+                        searchResultLabel.Text = "Search Result(s): " + filtered.Count;
+                }
+                else
+                {
+                    noSearchResultLabel.Visible = true;
+
+                    searchResultLabel.Visible = false;
+                }
+            }
+
+            else
+            {
+                displayItemsInListBox();
+                searchResultLabel.Visible = noSearchResultLabel.Visible = false;
             }
         }
     }
