@@ -29,21 +29,31 @@ namespace LibraryMgmWinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.stdntReportFilterTextBox = new System.Windows.Forms.TextBox();
+            this.filUserMgmTextBox = new System.Windows.Forms.TextBox();
             this.rentResultLabel = new System.Windows.Forms.Label();
-            this.viewStdntButton = new System.Windows.Forms.Button();
-            this.studntReportListBox = new System.Windows.Forms.ListBox();
+            this.viewUserMgmButton = new System.Windows.Forms.Button();
+            this.userMgmtListBox = new System.Windows.Forms.ListBox();
             this.filterStdntLabel = new System.Windows.Forms.Label();
-            this.searchStdntReport = new System.Windows.Forms.TextBox();
+            this.searchUserMgmTextBox = new System.Windows.Forms.TextBox();
             this.searchStdntLabel = new System.Windows.Forms.Label();
+            this.addUserMgmButton = new System.Windows.Forms.Button();
+            this.LNameUserMgmTextBox = new System.Windows.Forms.TextBox();
+            this.deptUserMgmTextBox = new System.Windows.Forms.TextBox();
+            this.FNameUserMgmTextBox = new System.Windows.Forms.TextBox();
+            this.IdUserMgmTextBox = new System.Windows.Forms.TextBox();
+            this.idUserReportLabel = new System.Windows.Forms.Label();
+            this.deptUserReportLabel = new System.Windows.Forms.Label();
+            this.LNameUserReportLabel = new System.Windows.Forms.Label();
+            this.FNameUserReportLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // stdntReportFilterTextBox
+            // filUserMgmTextBox
             // 
-            this.stdntReportFilterTextBox.Location = new System.Drawing.Point(215, 10);
-            this.stdntReportFilterTextBox.Name = "stdntReportFilterTextBox";
-            this.stdntReportFilterTextBox.Size = new System.Drawing.Size(100, 23);
-            this.stdntReportFilterTextBox.TabIndex = 41;
+            this.filUserMgmTextBox.Location = new System.Drawing.Point(215, 10);
+            this.filUserMgmTextBox.Name = "filUserMgmTextBox";
+            this.filUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
+            this.filUserMgmTextBox.TabIndex = 41;
             // 
             // rentResultLabel
             // 
@@ -54,23 +64,23 @@ namespace LibraryMgmWinForm
             this.rentResultLabel.TabIndex = 40;
             this.rentResultLabel.Text = "Search Result(s)";
             // 
-            // viewStdntButton
+            // viewUserMgmButton
             // 
-            this.viewStdntButton.Location = new System.Drawing.Point(96, 326);
-            this.viewStdntButton.Name = "viewStdntButton";
-            this.viewStdntButton.Size = new System.Drawing.Size(92, 23);
-            this.viewStdntButton.TabIndex = 39;
-            this.viewStdntButton.Text = "View";
-            this.viewStdntButton.UseVisualStyleBackColor = true;
+            this.viewUserMgmButton.Location = new System.Drawing.Point(117, 326);
+            this.viewUserMgmButton.Name = "viewUserMgmButton";
+            this.viewUserMgmButton.Size = new System.Drawing.Size(92, 23);
+            this.viewUserMgmButton.TabIndex = 39;
+            this.viewUserMgmButton.Text = "View";
+            this.viewUserMgmButton.UseVisualStyleBackColor = true;
             // 
-            // studntReportListBox
+            // userMgmtListBox
             // 
-            this.studntReportListBox.FormattingEnabled = true;
-            this.studntReportListBox.ItemHeight = 15;
-            this.studntReportListBox.Location = new System.Drawing.Point(12, 61);
-            this.studntReportListBox.Name = "studntReportListBox";
-            this.studntReportListBox.Size = new System.Drawing.Size(301, 259);
-            this.studntReportListBox.TabIndex = 38;
+            this.userMgmtListBox.FormattingEnabled = true;
+            this.userMgmtListBox.ItemHeight = 15;
+            this.userMgmtListBox.Location = new System.Drawing.Point(12, 61);
+            this.userMgmtListBox.Name = "userMgmtListBox";
+            this.userMgmtListBox.Size = new System.Drawing.Size(301, 259);
+            this.userMgmtListBox.TabIndex = 38;
             // 
             // filterStdntLabel
             // 
@@ -81,12 +91,12 @@ namespace LibraryMgmWinForm
             this.filterStdntLabel.TabIndex = 37;
             this.filterStdntLabel.Text = "Filter";
             // 
-            // searchStdntReport
+            // searchUserMgmTextBox
             // 
-            this.searchStdntReport.Location = new System.Drawing.Point(61, 10);
-            this.searchStdntReport.Name = "searchStdntReport";
-            this.searchStdntReport.Size = new System.Drawing.Size(100, 23);
-            this.searchStdntReport.TabIndex = 36;
+            this.searchUserMgmTextBox.Location = new System.Drawing.Point(61, 10);
+            this.searchUserMgmTextBox.Name = "searchUserMgmTextBox";
+            this.searchUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
+            this.searchUserMgmTextBox.TabIndex = 36;
             // 
             // searchStdntLabel
             // 
@@ -97,20 +107,113 @@ namespace LibraryMgmWinForm
             this.searchStdntLabel.TabIndex = 35;
             this.searchStdntLabel.Text = "Search";
             // 
+            // addUserMgmButton
+            // 
+            this.addUserMgmButton.Location = new System.Drawing.Point(430, 228);
+            this.addUserMgmButton.Name = "addUserMgmButton";
+            this.addUserMgmButton.Size = new System.Drawing.Size(75, 23);
+            this.addUserMgmButton.TabIndex = 53;
+            this.addUserMgmButton.Text = "Add";
+            this.addUserMgmButton.UseVisualStyleBackColor = true;
+            // 
+            // LNameUserMgmTextBox
+            // 
+            this.LNameUserMgmTextBox.Location = new System.Drawing.Point(430, 147);
+            this.LNameUserMgmTextBox.Name = "LNameUserMgmTextBox";
+            this.LNameUserMgmTextBox.Size = new System.Drawing.Size(165, 23);
+            this.LNameUserMgmTextBox.TabIndex = 49;
+            // 
+            // deptUserMgmTextBox
+            // 
+            this.deptUserMgmTextBox.Location = new System.Drawing.Point(430, 175);
+            this.deptUserMgmTextBox.Name = "deptUserMgmTextBox";
+            this.deptUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
+            this.deptUserMgmTextBox.TabIndex = 48;
+            // 
+            // FNameUserMgmTextBox
+            // 
+            this.FNameUserMgmTextBox.Location = new System.Drawing.Point(430, 118);
+            this.FNameUserMgmTextBox.Name = "FNameUserMgmTextBox";
+            this.FNameUserMgmTextBox.Size = new System.Drawing.Size(165, 23);
+            this.FNameUserMgmTextBox.TabIndex = 47;
+            // 
+            // IdUserMgmTextBox
+            // 
+            this.IdUserMgmTextBox.Location = new System.Drawing.Point(430, 89);
+            this.IdUserMgmTextBox.Name = "IdUserMgmTextBox";
+            this.IdUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
+            this.IdUserMgmTextBox.TabIndex = 46;
+            // 
+            // idUserReportLabel
+            // 
+            this.idUserReportLabel.AutoSize = true;
+            this.idUserReportLabel.Location = new System.Drawing.Point(337, 92);
+            this.idUserReportLabel.Name = "idUserReportLabel";
+            this.idUserReportLabel.Size = new System.Drawing.Size(18, 15);
+            this.idUserReportLabel.TabIndex = 45;
+            this.idUserReportLabel.Text = "ID";
+            // 
+            // deptUserReportLabel
+            // 
+            this.deptUserReportLabel.AutoSize = true;
+            this.deptUserReportLabel.Location = new System.Drawing.Point(337, 178);
+            this.deptUserReportLabel.Name = "deptUserReportLabel";
+            this.deptUserReportLabel.Size = new System.Drawing.Size(70, 15);
+            this.deptUserReportLabel.TabIndex = 44;
+            this.deptUserReportLabel.Text = "Department";
+            // 
+            // LNameUserReportLabel
+            // 
+            this.LNameUserReportLabel.AutoSize = true;
+            this.LNameUserReportLabel.Location = new System.Drawing.Point(337, 150);
+            this.LNameUserReportLabel.Name = "LNameUserReportLabel";
+            this.LNameUserReportLabel.Size = new System.Drawing.Size(63, 15);
+            this.LNameUserReportLabel.TabIndex = 43;
+            this.LNameUserReportLabel.Text = "Last Name";
+            // 
+            // FNameUserReportLabel
+            // 
+            this.FNameUserReportLabel.AutoSize = true;
+            this.FNameUserReportLabel.Location = new System.Drawing.Point(337, 121);
+            this.FNameUserReportLabel.Name = "FNameUserReportLabel";
+            this.FNameUserReportLabel.Size = new System.Drawing.Size(64, 15);
+            this.FNameUserReportLabel.TabIndex = 42;
+            this.FNameUserReportLabel.Text = "First Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(409, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 28);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Add New User";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 358);
-            this.Controls.Add(this.stdntReportFilterTextBox);
+            this.ClientSize = new System.Drawing.Size(662, 358);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.addUserMgmButton);
+            this.Controls.Add(this.LNameUserMgmTextBox);
+            this.Controls.Add(this.deptUserMgmTextBox);
+            this.Controls.Add(this.FNameUserMgmTextBox);
+            this.Controls.Add(this.IdUserMgmTextBox);
+            this.Controls.Add(this.idUserReportLabel);
+            this.Controls.Add(this.deptUserReportLabel);
+            this.Controls.Add(this.LNameUserReportLabel);
+            this.Controls.Add(this.FNameUserReportLabel);
+            this.Controls.Add(this.filUserMgmTextBox);
             this.Controls.Add(this.rentResultLabel);
-            this.Controls.Add(this.viewStdntButton);
-            this.Controls.Add(this.studntReportListBox);
+            this.Controls.Add(this.viewUserMgmButton);
+            this.Controls.Add(this.userMgmtListBox);
             this.Controls.Add(this.filterStdntLabel);
-            this.Controls.Add(this.searchStdntReport);
+            this.Controls.Add(this.searchUserMgmTextBox);
             this.Controls.Add(this.searchStdntLabel);
             this.Name = "Form3";
-            this.Text = "Student Report";
+            this.Text = "User Report";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,12 +221,22 @@ namespace LibraryMgmWinForm
 
         #endregion
 
-        private System.Windows.Forms.TextBox stdntReportFilterTextBox;
+        private System.Windows.Forms.TextBox filUserMgmTextBox;
         private System.Windows.Forms.Label rentResultLabel;
-        private System.Windows.Forms.Button viewStdntButton;
-        private System.Windows.Forms.ListBox studntReportListBox;
+        private System.Windows.Forms.Button viewUserMgmButton;
+        private System.Windows.Forms.ListBox userMgmtListBox;
         private System.Windows.Forms.Label filterStdntLabel;
-        private System.Windows.Forms.TextBox searchStdntReport;
+        private System.Windows.Forms.TextBox searchUserMgmTextBox;
         private System.Windows.Forms.Label searchStdntLabel;
+        private System.Windows.Forms.Button addUserMgmButton;
+        private System.Windows.Forms.TextBox LNameUserMgmTextBox;
+        private System.Windows.Forms.TextBox deptUserMgmTextBox;
+        private System.Windows.Forms.TextBox FNameUserMgmTextBox;
+        private System.Windows.Forms.TextBox IdUserMgmTextBox;
+        private System.Windows.Forms.Label idUserReportLabel;
+        private System.Windows.Forms.Label deptUserReportLabel;
+        private System.Windows.Forms.Label LNameUserReportLabel;
+        private System.Windows.Forms.Label FNameUserReportLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

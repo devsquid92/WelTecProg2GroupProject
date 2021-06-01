@@ -42,6 +42,8 @@ namespace LibraryMgmWinForm
             this.stdntInfoRecieveItemButton = new System.Windows.Forms.Button();
             this.stndtInfoBorrowedLabel = new System.Windows.Forms.Label();
             this.stdntInfoDueByLabel = new System.Windows.Forms.Label();
+            this.stdntInfoDeparmentTextBox = new System.Windows.Forms.TextBox();
+            this.stdntDepartmentLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stdntInfoSaveButton
@@ -106,9 +108,9 @@ namespace LibraryMgmWinForm
             // 
             this.BorrowedItems.FormattingEnabled = true;
             this.BorrowedItems.ItemHeight = 15;
-            this.BorrowedItems.Location = new System.Drawing.Point(14, 116);
+            this.BorrowedItems.Location = new System.Drawing.Point(14, 146);
             this.BorrowedItems.Name = "BorrowedItems";
-            this.BorrowedItems.Size = new System.Drawing.Size(329, 289);
+            this.BorrowedItems.Size = new System.Drawing.Size(329, 259);
             this.BorrowedItems.TabIndex = 35;
             // 
             // stdntInfoPenaltyAmountLabel
@@ -156,11 +158,29 @@ namespace LibraryMgmWinForm
             this.stdntInfoDueByLabel.TabIndex = 41;
             this.stdntInfoDueByLabel.Text = "Due by";
             // 
+            // stdntInfoDeparmentTextBox
+            // 
+            this.stdntInfoDeparmentTextBox.Location = new System.Drawing.Point(107, 105);
+            this.stdntInfoDeparmentTextBox.Name = "stdntInfoDeparmentTextBox";
+            this.stdntInfoDeparmentTextBox.Size = new System.Drawing.Size(236, 23);
+            this.stdntInfoDeparmentTextBox.TabIndex = 43;
+            // 
+            // stdntDepartmentLabel
+            // 
+            this.stdntDepartmentLabel.AutoSize = true;
+            this.stdntDepartmentLabel.Location = new System.Drawing.Point(14, 108);
+            this.stdntDepartmentLabel.Name = "stdntDepartmentLabel";
+            this.stdntDepartmentLabel.Size = new System.Drawing.Size(70, 15);
+            this.stdntDepartmentLabel.TabIndex = 42;
+            this.stdntDepartmentLabel.Text = "Department";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 473);
+            this.Controls.Add(this.stdntInfoDeparmentTextBox);
+            this.Controls.Add(this.stdntDepartmentLabel);
             this.Controls.Add(this.stdntInfoDueByLabel);
             this.Controls.Add(this.stndtInfoBorrowedLabel);
             this.Controls.Add(this.stdntInfoRecieveItemButton);
@@ -175,7 +195,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.stdntInfoIDLabel);
             this.Controls.Add(this.stdntInfoLastNameLabel);
             this.Name = "Form4";
-            this.Text = "Student Info";
+            this.Text = "User Info";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +216,7 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.Button stdntInfoRecieveItemButton;
         private System.Windows.Forms.Label stndtInfoBorrowedLabel;
         private System.Windows.Forms.Label stdntInfoDueByLabel;
+        private System.Windows.Forms.TextBox stdntInfoDeparmentTextBox;
+        private System.Windows.Forms.Label stdntDepartmentLabel;
     }
 }

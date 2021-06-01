@@ -56,7 +56,7 @@ namespace LibraryMgmWinForm
         {
             itemListBox.DataSource = new BindingSource(itemInfo, null);
 
-            //display the entries by key. Read about Listbox control here      
+            
 
             itemListBox.ValueMember = "Key";
 

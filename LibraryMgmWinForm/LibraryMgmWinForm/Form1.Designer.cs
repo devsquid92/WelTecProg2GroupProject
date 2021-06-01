@@ -37,7 +37,6 @@ namespace LibraryMgmWinForm
             this.authorLabel = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
-            this.itemStockLabel = new System.Windows.Forms.Label();
             this.isbnTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.yearTextBox = new System.Windows.Forms.TextBox();
@@ -128,15 +127,6 @@ namespace LibraryMgmWinForm
             this.isbnLabel.TabIndex = 8;
             this.isbnLabel.Text = "ISBN";
             // 
-            // itemStockLabel
-            // 
-            this.itemStockLabel.AutoSize = true;
-            this.itemStockLabel.Location = new System.Drawing.Point(617, 46);
-            this.itemStockLabel.Name = "itemStockLabel";
-            this.itemStockLabel.Size = new System.Drawing.Size(36, 15);
-            this.itemStockLabel.TabIndex = 9;
-            this.itemStockLabel.Text = "Stock";
-            // 
             // isbnTextBox
             // 
             this.isbnTextBox.Location = new System.Drawing.Point(437, 100);
@@ -193,7 +183,7 @@ namespace LibraryMgmWinForm
             // 
             // deleteItemButton
             // 
-            this.deleteItemButton.Location = new System.Drawing.Point(425, 20);
+            this.deleteItemButton.Location = new System.Drawing.Point(289, 367);
             this.deleteItemButton.Name = "deleteItemButton";
             this.deleteItemButton.Size = new System.Drawing.Size(87, 23);
             this.deleteItemButton.TabIndex = 17;
@@ -211,11 +201,11 @@ namespace LibraryMgmWinForm
             // 
             // memberReportButton
             // 
-            this.memberReportButton.Location = new System.Drawing.Point(13, 367);
+            this.memberReportButton.Location = new System.Drawing.Point(89, 367);
             this.memberReportButton.Name = "memberReportButton";
-            this.memberReportButton.Size = new System.Drawing.Size(109, 23);
+            this.memberReportButton.Size = new System.Drawing.Size(123, 23);
             this.memberReportButton.TabIndex = 19;
-            this.memberReportButton.Text = "User Report";
+            this.memberReportButton.Text = "User management";
             this.memberReportButton.UseVisualStyleBackColor = true;
             // 
             // cancelEditButton
@@ -291,7 +281,6 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.yearTextBox);
             this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.isbnTextBox);
-            this.Controls.Add(this.itemStockLabel);
             this.Controls.Add(this.isbnLabel);
             this.Controls.Add(this.yearLabel);
             this.Controls.Add(this.authorLabel);
@@ -318,7 +307,6 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.Label isbnLabel;
-        private System.Windows.Forms.Label itemStockLabel;
         private System.Windows.Forms.TextBox isbnTextBox;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox yearTextBox;
