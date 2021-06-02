@@ -14,6 +14,10 @@ namespace LibraryMgmWinForm
         /// 
 
         public static string newItemName = null;
+        public static string newUserId = null;
+        public static string newUserFName = null;
+        public static string newUserLName = null;
+        public static string newUserDept = null;
 
         [STAThread]
         static void Main()
