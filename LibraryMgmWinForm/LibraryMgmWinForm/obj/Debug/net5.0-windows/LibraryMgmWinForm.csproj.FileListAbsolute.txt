@@ -29,7 +29,6 @@ C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgm
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.csprojAssemblyReference.cache
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.addNewItem.resources
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.Form2.resources
-C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.Form3.resources
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.Form4.resources
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.csproj.GenerateResource.cache
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.GeneratedMSBuildEditorConfig.editorconfig
@@ -41,3 +40,5 @@ C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgm
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.pdb
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.genruntimeconfig.cache
 C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.LibraryManagement.resources
+C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.addNewUser.resources
+C:\Users\jmram\Source\Repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\obj\Debug\net5.0-windows\LibraryMgmWinForm.UserReport.resources

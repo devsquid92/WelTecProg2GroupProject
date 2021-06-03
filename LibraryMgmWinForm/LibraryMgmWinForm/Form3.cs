@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LibraryMgmWinForm
 {
@@ -22,12 +23,12 @@ namespace LibraryMgmWinForm
             InitializeComponent();
 
 
-            // change path
-            var path = @"../../datafiles/Users.csv";
 
-            string[] lines = System.IO.File.ReadAllLines(path);
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
 
-            foreach(string line in lines)
+            string[] lines = File.ReadAllLines(path);
+
+            foreach (string line in lines)
             {
                 if (line.StartsWith("ID"))
                     headings = line.Split(',');
@@ -36,15 +37,17 @@ namespace LibraryMgmWinForm
                 {
                     string[] info = line.Split(',');
 
-                    userInfo.Add(info[0], new Users
+
+
+                    userInfo.Add(string.Format("{0} , {1}", info[0], info[1]), new Users
                     {
-                        FirstName = info[1],
-                        LastName = info[2],
+
+                        FirstName = info[2],
                         Department = info[3],
                         issItems = info[4]
 
                     });
-                        
+
                 }
             }
 
@@ -80,18 +83,24 @@ namespace LibraryMgmWinForm
         {
             addNewUser anu = new addNewUser();
             anu.FormClosed += new FormClosedEventHandler(addNewUserFormClosed);
+
+            anu.Show();
         }
 
         void addNewUserFormClosed(object sender, FormClosedEventArgs e)
         {
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
+
             if (Program.newUserId != null)
-                userInfo.Add(Program.newUserId, new Users
-                {
-                    FirstName = Program.newUserFName,
-                    LastName = Program.newUserLName,
-                    Department = Program.newUserDept,
-                    issItems = "[none]"
-                });
+            {
+                string[] nextline = new string[]
+                     {
+                        string.Format("{0},{1},{2},{3},{4}", Program.newUserId, Program.newUserLName,
+                        Program.newUserFName, Program.newUserDept, Program.newUserIssItems)
+                     };
+
+                File.AppendAllLines(path, nextline);
+            }
 
             Program.newUserId = null;
             displayUserInUserListBox();

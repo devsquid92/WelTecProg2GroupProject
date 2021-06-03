@@ -156,5 +156,14 @@ namespace LibraryMgmWinForm
                 searchResultLabel.Visible = noSearchResultLabel.Visible = false;
             }
         }
+
+        private void memberReportButton_Click(object sender, EventArgs e)
+        {
+            UserReport ur = new UserReport();
+
+            //ur.FormClosed += new FormClosedEventHandler(addItemFormClosed);
+
+            ur.Show();
+        }
     }
 }

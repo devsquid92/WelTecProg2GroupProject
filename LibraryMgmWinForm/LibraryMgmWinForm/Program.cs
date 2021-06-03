@@ -15,9 +15,10 @@ namespace LibraryMgmWinForm
 
         public static string newItemName = null;
         public static string newUserId = null;
-        public static string newUserFName = null;
-        public static string newUserLName = null;
-        public static string newUserDept = null;
+        public static string newUserFName;
+        public static string newUserLName;
+        public static string newUserDept;
+        public static string newUserIssItems = "Null"; // must do: fix Users.class issitems - string builder do not accept null value
 
         [STAThread]
         static void Main()

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LibraryMgmWinForm
 {
     public partial class addNewUser : Form
     {
+
+        
+
         public addNewUser()
         {
             InitializeComponent();
@@ -24,6 +28,8 @@ namespace LibraryMgmWinForm
 
         private void addNewUserSaveMgmButton_Click(object sender, EventArgs e)
         {
+           // StreamWriter sw = new StreamWriter(Application.StartupPath + "\\test\\" + "Users.csv");
+
             Program.newUserId = addIdUserMgmTextBox.Text.ToString();
             Program.newUserFName = addFNameUserMgmTextBox.Text;
             Program.newUserLName = addLNameUserMgmTextBox.Text;
