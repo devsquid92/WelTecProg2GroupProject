@@ -20,6 +20,20 @@ namespace LibraryMgmWinForm
         public static string newUserDept;
         public static string newUserIssItems = "Null"; // must do: fix Users.class issitems - string builder do not accept null value
 
+        public static string showUserInfoId;
+        public static string showUserInfoFName;
+        public static string showUserInfoLName;
+        public static string showUserInfoDepartment;
+
+        public static List<string> showIssuedItems;
+
+
+
+        public static string editUserInfoId;
+        public static string editUserInfoFName;
+        public static string editUserInfoLName;
+        public static string editUserInfoDepartment;
+
         [STAThread]
         static void Main()
         {

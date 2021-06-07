@@ -29,53 +29,54 @@ namespace LibraryMgmWinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.stdntInfoSaveButton = new System.Windows.Forms.Button();
-            this.stdntInfoIDTextBox = new System.Windows.Forms.TextBox();
-            this.stdntInfoLNameTextBox = new System.Windows.Forms.TextBox();
-            this.stdntInfoFNameTextBox = new System.Windows.Forms.TextBox();
+            this.userInfoSaveButton = new System.Windows.Forms.Button();
+            this.userInfoIDTextBox = new System.Windows.Forms.TextBox();
+            this.userInfoLNameTextBox = new System.Windows.Forms.TextBox();
+            this.userInfoFNameTextBox = new System.Windows.Forms.TextBox();
             this.stdntInfoFirstNameLabel = new System.Windows.Forms.Label();
             this.stdntInfoIDLabel = new System.Windows.Forms.Label();
             this.stdntInfoLastNameLabel = new System.Windows.Forms.Label();
-            this.BorrowedItems = new System.Windows.Forms.ListBox();
+            this.issuedListBox = new System.Windows.Forms.ListBox();
             this.stdntInfoPenaltyAmountLabel = new System.Windows.Forms.Label();
             this.stdntInfoPayButton = new System.Windows.Forms.Button();
             this.stdntInfoRecieveItemButton = new System.Windows.Forms.Button();
             this.stndtInfoBorrowedLabel = new System.Windows.Forms.Label();
             this.stdntInfoDueByLabel = new System.Windows.Forms.Label();
-            this.stdntInfoDeparmentTextBox = new System.Windows.Forms.TextBox();
+            this.userInfoDeparmentTextBox = new System.Windows.Forms.TextBox();
             this.stdntDepartmentLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // stdntInfoSaveButton
+            // userInfoSaveButton
             // 
-            this.stdntInfoSaveButton.Location = new System.Drawing.Point(268, 17);
-            this.stdntInfoSaveButton.Name = "stdntInfoSaveButton";
-            this.stdntInfoSaveButton.Size = new System.Drawing.Size(75, 23);
-            this.stdntInfoSaveButton.TabIndex = 34;
-            this.stdntInfoSaveButton.Text = "Save";
-            this.stdntInfoSaveButton.UseVisualStyleBackColor = true;
-            this.stdntInfoSaveButton.Click += new System.EventHandler(this.stdntInfoSaveButton_Click);
+            this.userInfoSaveButton.Location = new System.Drawing.Point(268, 17);
+            this.userInfoSaveButton.Name = "userInfoSaveButton";
+            this.userInfoSaveButton.Size = new System.Drawing.Size(75, 23);
+            this.userInfoSaveButton.TabIndex = 34;
+            this.userInfoSaveButton.Text = "Save";
+            this.userInfoSaveButton.UseVisualStyleBackColor = true;
+            this.userInfoSaveButton.Click += new System.EventHandler(this.userInfoSaveButton_Click);
             // 
-            // stdntInfoIDTextBox
+            // userInfoIDTextBox
             // 
-            this.stdntInfoIDTextBox.Location = new System.Drawing.Point(107, 18);
-            this.stdntInfoIDTextBox.Name = "stdntInfoIDTextBox";
-            this.stdntInfoIDTextBox.Size = new System.Drawing.Size(135, 23);
-            this.stdntInfoIDTextBox.TabIndex = 30;
+            this.userInfoIDTextBox.Location = new System.Drawing.Point(107, 18);
+            this.userInfoIDTextBox.Name = "userInfoIDTextBox";
+            this.userInfoIDTextBox.Size = new System.Drawing.Size(135, 23);
+            this.userInfoIDTextBox.TabIndex = 30;
             // 
-            // stdntInfoLNameTextBox
+            // userInfoLNameTextBox
             // 
-            this.stdntInfoLNameTextBox.Location = new System.Drawing.Point(107, 76);
-            this.stdntInfoLNameTextBox.Name = "stdntInfoLNameTextBox";
-            this.stdntInfoLNameTextBox.Size = new System.Drawing.Size(236, 23);
-            this.stdntInfoLNameTextBox.TabIndex = 28;
+            this.userInfoLNameTextBox.Location = new System.Drawing.Point(107, 76);
+            this.userInfoLNameTextBox.Name = "userInfoLNameTextBox";
+            this.userInfoLNameTextBox.Size = new System.Drawing.Size(236, 23);
+            this.userInfoLNameTextBox.TabIndex = 28;
             // 
-            // stdntInfoFNameTextBox
+            // userInfoFNameTextBox
             // 
-            this.stdntInfoFNameTextBox.Location = new System.Drawing.Point(107, 47);
-            this.stdntInfoFNameTextBox.Name = "stdntInfoFNameTextBox";
-            this.stdntInfoFNameTextBox.Size = new System.Drawing.Size(236, 23);
-            this.stdntInfoFNameTextBox.TabIndex = 27;
+            this.userInfoFNameTextBox.Location = new System.Drawing.Point(107, 47);
+            this.userInfoFNameTextBox.Name = "userInfoFNameTextBox";
+            this.userInfoFNameTextBox.Size = new System.Drawing.Size(236, 23);
+            this.userInfoFNameTextBox.TabIndex = 27;
+            this.userInfoFNameTextBox.TextChanged += new System.EventHandler(this.userInfoFNameTextBox_TextChanged);
             // 
             // stdntInfoFirstNameLabel
             // 
@@ -104,14 +105,15 @@ namespace LibraryMgmWinForm
             this.stdntInfoLastNameLabel.TabIndex = 23;
             this.stdntInfoLastNameLabel.Text = "Last Name";
             // 
-            // BorrowedItems
+            // issuedListBox
             // 
-            this.BorrowedItems.FormattingEnabled = true;
-            this.BorrowedItems.ItemHeight = 15;
-            this.BorrowedItems.Location = new System.Drawing.Point(14, 146);
-            this.BorrowedItems.Name = "BorrowedItems";
-            this.BorrowedItems.Size = new System.Drawing.Size(329, 259);
-            this.BorrowedItems.TabIndex = 35;
+            this.issuedListBox.FormattingEnabled = true;
+            this.issuedListBox.ItemHeight = 15;
+            this.issuedListBox.Location = new System.Drawing.Point(14, 146);
+            this.issuedListBox.Name = "issuedListBox";
+            this.issuedListBox.Size = new System.Drawing.Size(329, 259);
+            this.issuedListBox.TabIndex = 35;
+            this.issuedListBox.SelectedIndexChanged += new System.EventHandler(this.BorrowedItems_SelectedIndexChanged);
             // 
             // stdntInfoPenaltyAmountLabel
             // 
@@ -158,12 +160,12 @@ namespace LibraryMgmWinForm
             this.stdntInfoDueByLabel.TabIndex = 41;
             this.stdntInfoDueByLabel.Text = "Due by";
             // 
-            // stdntInfoDeparmentTextBox
+            // userInfoDeparmentTextBox
             // 
-            this.stdntInfoDeparmentTextBox.Location = new System.Drawing.Point(107, 105);
-            this.stdntInfoDeparmentTextBox.Name = "stdntInfoDeparmentTextBox";
-            this.stdntInfoDeparmentTextBox.Size = new System.Drawing.Size(236, 23);
-            this.stdntInfoDeparmentTextBox.TabIndex = 43;
+            this.userInfoDeparmentTextBox.Location = new System.Drawing.Point(107, 105);
+            this.userInfoDeparmentTextBox.Name = "userInfoDeparmentTextBox";
+            this.userInfoDeparmentTextBox.Size = new System.Drawing.Size(236, 23);
+            this.userInfoDeparmentTextBox.TabIndex = 43;
             // 
             // stdntDepartmentLabel
             // 
@@ -179,23 +181,24 @@ namespace LibraryMgmWinForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 473);
-            this.Controls.Add(this.stdntInfoDeparmentTextBox);
+            this.Controls.Add(this.userInfoDeparmentTextBox);
             this.Controls.Add(this.stdntDepartmentLabel);
             this.Controls.Add(this.stdntInfoDueByLabel);
             this.Controls.Add(this.stndtInfoBorrowedLabel);
             this.Controls.Add(this.stdntInfoRecieveItemButton);
             this.Controls.Add(this.stdntInfoPayButton);
             this.Controls.Add(this.stdntInfoPenaltyAmountLabel);
-            this.Controls.Add(this.BorrowedItems);
-            this.Controls.Add(this.stdntInfoSaveButton);
-            this.Controls.Add(this.stdntInfoIDTextBox);
-            this.Controls.Add(this.stdntInfoLNameTextBox);
-            this.Controls.Add(this.stdntInfoFNameTextBox);
+            this.Controls.Add(this.issuedListBox);
+            this.Controls.Add(this.userInfoSaveButton);
+            this.Controls.Add(this.userInfoIDTextBox);
+            this.Controls.Add(this.userInfoLNameTextBox);
+            this.Controls.Add(this.userInfoFNameTextBox);
             this.Controls.Add(this.stdntInfoFirstNameLabel);
             this.Controls.Add(this.stdntInfoIDLabel);
             this.Controls.Add(this.stdntInfoLastNameLabel);
             this.Name = "Form4";
             this.Text = "User Info";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,20 +206,20 @@ namespace LibraryMgmWinForm
 
         #endregion
 
-        private System.Windows.Forms.Button stdntInfoSaveButton;
-        private System.Windows.Forms.TextBox stdntInfoIDTextBox;
-        private System.Windows.Forms.TextBox stdntInfoLNameTextBox;
-        private System.Windows.Forms.TextBox stdntInfoFNameTextBox;
+        private System.Windows.Forms.Button userInfoSaveButton;
+        private System.Windows.Forms.TextBox userInfoIDTextBox;
+        private System.Windows.Forms.TextBox userInfoLNameTextBox;
+        private System.Windows.Forms.TextBox userInfoFNameTextBox;
         private System.Windows.Forms.Label stdntInfoFirstNameLabel;
         private System.Windows.Forms.Label stdntInfoIDLabel;
         private System.Windows.Forms.Label stdntInfoLastNameLabel;
-        private System.Windows.Forms.ListBox BorrowedItems;
+        private System.Windows.Forms.ListBox issuedListBox;
         private System.Windows.Forms.Label stdntInfoPenaltyAmountLabel;
         private System.Windows.Forms.Button stdntInfoPayButton;
         private System.Windows.Forms.Button stdntInfoRecieveItemButton;
         private System.Windows.Forms.Label stndtInfoBorrowedLabel;
         private System.Windows.Forms.Label stdntInfoDueByLabel;
-        private System.Windows.Forms.TextBox stdntInfoDeparmentTextBox;
+        private System.Windows.Forms.TextBox userInfoDeparmentTextBox;
         private System.Windows.Forms.Label stdntDepartmentLabel;
     }
 }

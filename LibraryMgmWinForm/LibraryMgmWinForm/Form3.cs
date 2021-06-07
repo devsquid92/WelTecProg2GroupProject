@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace LibraryMgmWinForm
 {
@@ -41,7 +42,8 @@ namespace LibraryMgmWinForm
 
                     userInfo.Add(string.Format("{0} , {1}", info[0], info[1]), new Users
                     {
-
+                        Id = Int32.Parse(info[0]),
+                        LastName = info[1],
                         FirstName = info[2],
                         Department = info[3],
                         issItems = info[4]
@@ -66,6 +68,8 @@ namespace LibraryMgmWinForm
             userMgmtListBox.ValueMember = "Key";
         }
 
+   
+
         private void Form3_Load(object sender, EventArgs e)
         {
 
@@ -73,15 +77,24 @@ namespace LibraryMgmWinForm
 
         private void userMgmtListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+    
             if (userInfo.ContainsKey(userMgmtListBox.SelectedValue.ToString()))
                 selectedUser = userInfo[userMgmtListBox.SelectedValue.ToString()];
 
-            // must do: When 'View' button is click with selected user, pass data to Form4 'User Info'
+
+            Program.showIssuedItems = selectedUser.IssueItems;
+
+            Program.showUserInfoId = selectedUser.Id.ToString();
+            Program.showUserInfoFName = selectedUser.FirstName;
+            Program.showUserInfoLName = selectedUser.LastName;
+            Program.showUserInfoDepartment = selectedUser.Department;
+
         }
 
         private void addNewUserMgmButton_Click(object sender, EventArgs e)
         {
             addNewUser anu = new addNewUser();
+
             anu.FormClosed += new FormClosedEventHandler(addNewUserFormClosed);
 
             anu.Show();
@@ -105,5 +118,31 @@ namespace LibraryMgmWinForm
             Program.newUserId = null;
             displayUserInUserListBox();
         }
+
+        private void userRepViewButton_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.FormClosed += new FormClosedEventHandler(viewUserInfoFormClosed);
+
+            f4.Show();
+            this.Close();
+
+
+        }
+
+        void viewUserInfoFormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            //must do: must update to text file
+   
+            selectedUser.Id = Int32.Parse(Program.editUserInfoId);
+            selectedUser.LastName = Program.editUserInfoLName;
+            selectedUser.FirstName = Program.editUserInfoFName;
+            selectedUser.Department = Program.editUserInfoDepartment;
+
+
+
+        }
+
     }
 }

@@ -12,12 +12,53 @@ namespace LibraryMgmWinForm
 {
     public partial class Form4 : Form
     {
+
         public Form4()
         {
             InitializeComponent();
+    
         }
 
-        private void stdntInfoSaveButton_Click(object sender, EventArgs e)
+        private void userInfoSaveButton_Click(object sender, EventArgs e)
+        {
+            UserReport ur = new UserReport();
+
+
+            Program.editUserInfoId = userInfoIDTextBox.Text;
+            Program.editUserInfoFName = userInfoFNameTextBox.Text;
+            Program.editUserInfoLName = userInfoLNameTextBox.Text;
+            Program.editUserInfoDepartment = userInfoDeparmentTextBox.Text;
+
+           
+            ur.Show();
+            this.Close();
+
+        }
+
+ 
+     
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            if (Program.showUserInfoId != null)
+            {
+                userInfoIDTextBox.Text = Program.showUserInfoId;
+                userInfoFNameTextBox.Text = Program.showUserInfoFName;
+                userInfoLNameTextBox.Text = Program.showUserInfoLName;
+                userInfoDeparmentTextBox.Text = Program.showUserInfoDepartment;
+
+                issuedListBox.DataSource = Program.showIssuedItems;
+            }
+
+
+        }
+
+        private void BorrowedItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userInfoFNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
