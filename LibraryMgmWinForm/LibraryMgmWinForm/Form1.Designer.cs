@@ -58,132 +58,124 @@ namespace LibraryMgmWinForm
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(14, 12);
+            this.searchLabel.Location = new System.Drawing.Point(12, 9);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(53, 20);
+            this.searchLabel.Size = new System.Drawing.Size(42, 15);
             this.searchLabel.TabIndex = 0;
             this.searchLabel.Text = "Search";
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(70, 12);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBox.Location = new System.Drawing.Point(61, 9);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(114, 27);
+            this.searchBox.Size = new System.Drawing.Size(100, 23);
             this.searchBox.TabIndex = 1;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Location = new System.Drawing.Point(201, 12);
+            this.categoryLabel.Location = new System.Drawing.Point(176, 9);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(69, 20);
+            this.categoryLabel.Size = new System.Drawing.Size(55, 15);
             this.categoryLabel.TabIndex = 2;
             this.categoryLabel.Text = "Category";
             // 
             // itemListBox
             // 
             this.itemListBox.FormattingEnabled = true;
-            this.itemListBox.ItemHeight = 20;
-            this.itemListBox.Location = new System.Drawing.Point(14, 80);
-            this.itemListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.itemListBox.ItemHeight = 15;
+            this.itemListBox.Location = new System.Drawing.Point(12, 60);
             this.itemListBox.Name = "itemListBox";
-            this.itemListBox.Size = new System.Drawing.Size(343, 344);
+            this.itemListBox.Size = new System.Drawing.Size(301, 259);
             this.itemListBox.TabIndex = 27;
             this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged_1);
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(393, 176);
+            this.titleLabel.Location = new System.Drawing.Point(344, 132);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(38, 20);
+            this.titleLabel.Size = new System.Drawing.Size(29, 15);
             this.titleLabel.TabIndex = 5;
             this.titleLabel.Text = "Title";
             // 
             // authorLabel
             // 
             this.authorLabel.AutoSize = true;
-            this.authorLabel.Location = new System.Drawing.Point(393, 215);
+            this.authorLabel.Location = new System.Drawing.Point(344, 161);
             this.authorLabel.Name = "authorLabel";
-            this.authorLabel.Size = new System.Drawing.Size(54, 20);
+            this.authorLabel.Size = new System.Drawing.Size(44, 15);
             this.authorLabel.TabIndex = 6;
             this.authorLabel.Text = "Author";
             // 
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
-            this.yearLabel.Location = new System.Drawing.Point(393, 252);
+            this.yearLabel.Location = new System.Drawing.Point(344, 189);
             this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(105, 20);
+            this.yearLabel.Size = new System.Drawing.Size(84, 15);
             this.yearLabel.TabIndex = 7;
             this.yearLabel.Text = "Year Published";
             // 
             // isbnLabel
             // 
             this.isbnLabel.AutoSize = true;
-            this.isbnLabel.Location = new System.Drawing.Point(393, 137);
+            this.isbnLabel.Location = new System.Drawing.Point(344, 103);
             this.isbnLabel.Name = "isbnLabel";
-            this.isbnLabel.Size = new System.Drawing.Size(41, 20);
+            this.isbnLabel.Size = new System.Drawing.Size(32, 15);
             this.isbnLabel.TabIndex = 8;
             this.isbnLabel.Text = "ISBN";
             // 
             // isbnTextBox
             // 
-            this.isbnTextBox.Location = new System.Drawing.Point(499, 133);
-            this.isbnTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.isbnTextBox.Location = new System.Drawing.Point(437, 100);
             this.isbnTextBox.Name = "isbnTextBox";
-            this.isbnTextBox.Size = new System.Drawing.Size(114, 27);
+            this.isbnTextBox.Size = new System.Drawing.Size(100, 23);
             this.isbnTextBox.TabIndex = 10;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(499, 172);
-            this.titleTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.titleTextBox.Location = new System.Drawing.Point(437, 129);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(269, 27);
+            this.titleTextBox.Size = new System.Drawing.Size(236, 23);
             this.titleTextBox.TabIndex = 11;
             // 
             // yearTextBox
             // 
-            this.yearTextBox.Location = new System.Drawing.Point(499, 248);
-            this.yearTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.yearTextBox.Location = new System.Drawing.Point(437, 186);
             this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(91, 27);
+            this.yearTextBox.Size = new System.Drawing.Size(80, 23);
             this.yearTextBox.TabIndex = 12;
             // 
             // authorTextBox
             // 
-            this.authorTextBox.Location = new System.Drawing.Point(499, 211);
-            this.authorTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.authorTextBox.Location = new System.Drawing.Point(437, 158);
             this.authorTextBox.Name = "authorTextBox";
-            this.authorTextBox.Size = new System.Drawing.Size(188, 27);
+            this.authorTextBox.Size = new System.Drawing.Size(165, 23);
             this.authorTextBox.TabIndex = 13;
             // 
             // categoryTextBox
             // 
-            this.categoryTextBox.Location = new System.Drawing.Point(499, 287);
-            this.categoryTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.categoryTextBox.Location = new System.Drawing.Point(437, 215);
             this.categoryTextBox.Name = "categoryTextBox";
-            this.categoryTextBox.Size = new System.Drawing.Size(91, 27);
+            this.categoryTextBox.Size = new System.Drawing.Size(80, 23);
             this.categoryTextBox.TabIndex = 15;
             // 
             // categryLabel
             // 
             this.categryLabel.AutoSize = true;
-            this.categryLabel.Location = new System.Drawing.Point(393, 291);
+            this.categryLabel.Location = new System.Drawing.Point(344, 218);
             this.categryLabel.Name = "categryLabel";
-            this.categryLabel.Size = new System.Drawing.Size(69, 20);
+            this.categryLabel.Size = new System.Drawing.Size(55, 15);
             this.categryLabel.TabIndex = 14;
             this.categryLabel.Text = "Category";
             // 
             // addItemButton
             // 
-            this.addItemButton.Location = new System.Drawing.Point(15, 435);
-            this.addItemButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addItemButton.Location = new System.Drawing.Point(13, 326);
             this.addItemButton.Name = "addItemButton";
-            this.addItemButton.Size = new System.Drawing.Size(99, 31);
+            this.addItemButton.Size = new System.Drawing.Size(87, 23);
             this.addItemButton.TabIndex = 16;
             this.addItemButton.Text = "Add Item";
             this.addItemButton.UseVisualStyleBackColor = true;
@@ -191,30 +183,28 @@ namespace LibraryMgmWinForm
             // 
             // deleteItemButton
             // 
-            this.deleteItemButton.Location = new System.Drawing.Point(330, 489);
-            this.deleteItemButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteItemButton.Location = new System.Drawing.Point(289, 367);
             this.deleteItemButton.Name = "deleteItemButton";
-            this.deleteItemButton.Size = new System.Drawing.Size(99, 31);
+            this.deleteItemButton.Size = new System.Drawing.Size(87, 23);
             this.deleteItemButton.TabIndex = 17;
             this.deleteItemButton.Text = "Delete Item";
             this.deleteItemButton.UseVisualStyleBackColor = true;
             // 
             // rentItemButton
             // 
-            this.rentItemButton.Location = new System.Drawing.Point(201, 435);
-            this.rentItemButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rentItemButton.Location = new System.Drawing.Point(176, 326);
             this.rentItemButton.Name = "rentItemButton";
-            this.rentItemButton.Size = new System.Drawing.Size(105, 31);
+            this.rentItemButton.Size = new System.Drawing.Size(92, 23);
             this.rentItemButton.TabIndex = 18;
             this.rentItemButton.Text = "Rent Item";
             this.rentItemButton.UseVisualStyleBackColor = true;
+            this.rentItemButton.Click += new System.EventHandler(this.rentItemButton_Click);
             // 
             // memberReportButton
             // 
-            this.memberReportButton.Location = new System.Drawing.Point(102, 489);
-            this.memberReportButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.memberReportButton.Location = new System.Drawing.Point(89, 367);
             this.memberReportButton.Name = "memberReportButton";
-            this.memberReportButton.Size = new System.Drawing.Size(141, 31);
+            this.memberReportButton.Size = new System.Drawing.Size(123, 23);
             this.memberReportButton.TabIndex = 19;
             this.memberReportButton.Text = "User management";
             this.memberReportButton.UseVisualStyleBackColor = true;
@@ -222,20 +212,18 @@ namespace LibraryMgmWinForm
             // 
             // cancelEditButton
             // 
-            this.cancelEditButton.Location = new System.Drawing.Point(499, 361);
-            this.cancelEditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelEditButton.Location = new System.Drawing.Point(437, 271);
             this.cancelEditButton.Name = "cancelEditButton";
-            this.cancelEditButton.Size = new System.Drawing.Size(86, 31);
+            this.cancelEditButton.Size = new System.Drawing.Size(75, 23);
             this.cancelEditButton.TabIndex = 21;
             this.cancelEditButton.Text = "Cancel";
             this.cancelEditButton.UseVisualStyleBackColor = true;
             // 
             // saveEditButton
             // 
-            this.saveEditButton.Location = new System.Drawing.Point(624, 361);
-            this.saveEditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.saveEditButton.Location = new System.Drawing.Point(546, 271);
             this.saveEditButton.Name = "saveEditButton";
-            this.saveEditButton.Size = new System.Drawing.Size(86, 31);
+            this.saveEditButton.Size = new System.Drawing.Size(75, 23);
             this.saveEditButton.TabIndex = 22;
             this.saveEditButton.Text = "Save";
             this.saveEditButton.UseVisualStyleBackColor = true;
@@ -244,43 +232,42 @@ namespace LibraryMgmWinForm
             // searchResultLabel
             // 
             this.searchResultLabel.AutoSize = true;
-            this.searchResultLabel.Location = new System.Drawing.Point(15, 56);
+            this.searchResultLabel.Location = new System.Drawing.Point(13, 42);
             this.searchResultLabel.Name = "searchResultLabel";
-            this.searchResultLabel.Size = new System.Drawing.Size(113, 20);
+            this.searchResultLabel.Size = new System.Drawing.Size(90, 15);
             this.searchResultLabel.TabIndex = 23;
             this.searchResultLabel.Text = "Search Result(s)";
             // 
             // ctgryTextBox
             // 
-            this.ctgryTextBox.Location = new System.Drawing.Point(271, 12);
-            this.ctgryTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ctgryTextBox.Location = new System.Drawing.Point(237, 9);
             this.ctgryTextBox.Name = "ctgryTextBox";
-            this.ctgryTextBox.Size = new System.Drawing.Size(114, 27);
+            this.ctgryTextBox.Size = new System.Drawing.Size(100, 23);
             this.ctgryTextBox.TabIndex = 24;
             // 
             // noSearchResultLabel
             // 
             this.noSearchResultLabel.AutoSize = true;
-            this.noSearchResultLabel.Location = new System.Drawing.Point(15, 56);
+            this.noSearchResultLabel.Location = new System.Drawing.Point(13, 42);
             this.noSearchResultLabel.Name = "noSearchResultLabel";
-            this.noSearchResultLabel.Size = new System.Drawing.Size(73, 20);
+            this.noSearchResultLabel.Size = new System.Drawing.Size(58, 15);
             this.noSearchResultLabel.TabIndex = 25;
             this.noSearchResultLabel.Text = "No Result";
             // 
             // avaLabel
             // 
             this.avaLabel.AutoSize = true;
-            this.avaLabel.Location = new System.Drawing.Point(271, 56);
+            this.avaLabel.Location = new System.Drawing.Point(237, 42);
             this.avaLabel.Name = "avaLabel";
-            this.avaLabel.Size = new System.Drawing.Size(71, 20);
+            this.avaLabel.Size = new System.Drawing.Size(55, 15);
             this.avaLabel.TabIndex = 26;
             this.avaLabel.Text = "Available";
             // 
             // LibraryManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 536);
+            this.ClientSize = new System.Drawing.Size(694, 402);
             this.Controls.Add(this.avaLabel);
             this.Controls.Add(this.ctgryTextBox);
             this.Controls.Add(this.searchResultLabel);
@@ -305,7 +292,6 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.noSearchResultLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LibraryManagement";
             this.Text = "LibraryManagement - Admin";
             this.ResumeLayout(false);

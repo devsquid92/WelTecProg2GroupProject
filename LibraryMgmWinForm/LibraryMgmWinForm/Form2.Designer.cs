@@ -74,6 +74,7 @@ namespace LibraryMgmWinForm
             this.stdntListBox.Name = "stdntListBox";
             this.stdntListBox.Size = new System.Drawing.Size(301, 259);
             this.stdntListBox.TabIndex = 28;
+            this.stdntListBox.SelectedIndexChanged += new System.EventHandler(this.stdntListBox_SelectedIndexChanged);
             // 
             // filterRentLabel
             // 
@@ -114,7 +115,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.searchRentLabel);
             this.Name = "Form2";
             this.Text = "Issue Item";
-            this.Load += new System.EventHandler(this.Form2_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -21,22 +21,16 @@ namespace LibraryMgmWinForm
 
         private void userInfoSaveButton_Click(object sender, EventArgs e)
         {
-            UserReport ur = new UserReport();
-
+            
 
             Program.editUserInfoId = userInfoIDTextBox.Text;
             Program.editUserInfoFName = userInfoFNameTextBox.Text;
             Program.editUserInfoLName = userInfoLNameTextBox.Text;
             Program.editUserInfoDepartment = userInfoDeparmentTextBox.Text;
 
-           
-            ur.Show();
-            this.Close();
+            MessageBox.Show("Successfully saved");
 
         }
-
- 
-     
 
         private void Form4_Load(object sender, EventArgs e)
         {
@@ -49,8 +43,6 @@ namespace LibraryMgmWinForm
 
                 issuedListBox.DataSource = Program.showIssuedItems;
             }
-
-
         }
 
         private void BorrowedItems_SelectedIndexChanged(object sender, EventArgs e)

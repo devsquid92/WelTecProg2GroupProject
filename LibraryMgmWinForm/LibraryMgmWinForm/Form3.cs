@@ -39,7 +39,7 @@ namespace LibraryMgmWinForm
                     string[] info = line.Split(',');
 
 
-
+                   
                     userInfo.Add(string.Format("{0} , {1}", info[0], info[1]), new Users
                     {
                         Id = Int32.Parse(info[0]),
@@ -68,12 +68,6 @@ namespace LibraryMgmWinForm
             userMgmtListBox.ValueMember = "Key";
         }
 
-   
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void userMgmtListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,6 +118,7 @@ namespace LibraryMgmWinForm
             Form4 f4 = new Form4();
             f4.FormClosed += new FormClosedEventHandler(viewUserInfoFormClosed);
 
+
             f4.Show();
             this.Close();
 
@@ -132,17 +127,75 @@ namespace LibraryMgmWinForm
 
         void viewUserInfoFormClosed(object sender, FormClosedEventArgs e)
         {
+            var temppath = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
+            List<string> templist = File.ReadAllLines(temppath).ToList();
 
-            //must do: must update to text file
-   
-            selectedUser.Id = Int32.Parse(Program.editUserInfoId);
-            selectedUser.LastName = Program.editUserInfoLName;
-            selectedUser.FirstName = Program.editUserInfoFName;
-            selectedUser.Department = Program.editUserInfoDepartment;
 
+            foreach(string tl in templist.ToArray())
+            {
+                string[] getline = tl.Split(',');
+
+                if (tl.StartsWith(selectedUser.Id.ToString()) 
+                    && (Program.editUserInfoId != selectedUser.Id.ToString()))
+                {
+                    int index = templist.FindIndex(x => x.StartsWith(selectedUser.Id.ToString()));
+                    templist.RemoveAt(index);
+
+                    File.WriteAllLines(temppath, templist);
+
+                    var test = tl.Replace(getline[0], Program.editUserInfoId);
+                    File.AppendAllText(temppath, test);
+
+                }
+
+                //else 
+                //if (tl.StartsWith(selectedUser.FirstName)
+                //    && (Program.editUserInfoId != selectedUser.FirstName))
+                //    {
+                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.FirstName));
+                //        templist.RemoveAt(index);
+
+                //        File.WriteAllLines(temppath, templist);
+
+                //        var test = tl.Replace(getline[2], Program.editUserInfoFName);
+                //        File.AppendAllText(temppath, test);
+
+                //    }
+
+                //    else 
+                //    if (tl.StartsWith(selectedUser.LastName)
+                //        && (Program.editUserInfoId != selectedUser.LastName))
+                //    {
+                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.LastName));
+                //        templist.RemoveAt(index);
+
+                //        File.WriteAllLines(temppath, templist);
+
+                //        var test = tl.Replace(getline[1], Program.editUserInfoLName);
+                //        File.AppendAllText(temppath, test);
+
+                //    }
+
+                //    else 
+                //    if (tl.StartsWith(selectedUser.Department)
+                //         && (Program.editUserInfoId != selectedUser.Department))
+                //    {
+                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.Department));
+                //        templist.RemoveAt(index);
+
+                //        File.WriteAllLines(temppath, templist);
+
+                //        var test = tl.Replace(getline[3], Program.editUserInfoDepartment);
+                //        File.AppendAllText(temppath, test);
+
+                //    }
+
+
+
+
+            }
 
 
         }
-
     }
 }

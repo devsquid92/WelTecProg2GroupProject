@@ -36,6 +36,7 @@ namespace LibraryMgmWinForm
 
                     itemInfo.Add(info[0], new Items
                     {
+                        Title = info[0],
                         Isbn = info[1],
                         Author = info[2],
                         YearPublished = Int32.Parse(info[3]),
@@ -164,6 +165,12 @@ namespace LibraryMgmWinForm
             //ur.FormClosed += new FormClosedEventHandler(addItemFormClosed);
 
             ur.Show();
+        }
+
+        private void rentItemButton_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
         }
     }
 }

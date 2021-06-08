@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jmram\\source\\repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj": {}
+    "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jmram\\source\\repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj": {
+    "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jmram\\source\\repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
+        "projectUniqueName": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
         "projectName": "LibraryMgmWinForm",
-        "projectPath": "C:\\Users\\jmram\\source\\repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
+        "projectPath": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\LibraryMgmWinForm.csproj",
         "packagesPath": "C:\\Users\\jmram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jmram\\source\\repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\obj\\",
+        "outputPath": "C:\\Users\\jmram\\Source\\Repos\\WelTecProg2GroupProject\\LibraryMgmWinForm\\LibraryMgmWinForm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jmram\\AppData\\Roaming\\NuGet\\NuGet.Config",

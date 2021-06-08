@@ -45,6 +45,7 @@ namespace LibraryMgmWinForm
             this.filUserMgmTextBox.Name = "filUserMgmTextBox";
             this.filUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
             this.filUserMgmTextBox.TabIndex = 41;
+            
             // 
             // rentResultLabel
             // 
@@ -54,6 +55,7 @@ namespace LibraryMgmWinForm
             this.rentResultLabel.Size = new System.Drawing.Size(90, 15);
             this.rentResultLabel.TabIndex = 40;
             this.rentResultLabel.Text = "Search Result(s)";
+            
             // 
             // userMgmtListBox
             // 
@@ -73,6 +75,7 @@ namespace LibraryMgmWinForm
             this.filterStdntLabel.Size = new System.Drawing.Size(33, 15);
             this.filterStdntLabel.TabIndex = 37;
             this.filterStdntLabel.Text = "Filter";
+            
             // 
             // searchUserMgmTextBox
             // 
@@ -80,6 +83,7 @@ namespace LibraryMgmWinForm
             this.searchUserMgmTextBox.Name = "searchUserMgmTextBox";
             this.searchUserMgmTextBox.Size = new System.Drawing.Size(100, 23);
             this.searchUserMgmTextBox.TabIndex = 36;
+            
             // 
             // searchStdntLabel
             // 
@@ -89,6 +93,7 @@ namespace LibraryMgmWinForm
             this.searchStdntLabel.Size = new System.Drawing.Size(42, 15);
             this.searchStdntLabel.TabIndex = 35;
             this.searchStdntLabel.Text = "Search";
+            
             // 
             // addNewUserMgmButton
             // 
@@ -125,7 +130,7 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.searchStdntLabel);
             this.Name = "UserReport";
             this.Text = "User Report";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
