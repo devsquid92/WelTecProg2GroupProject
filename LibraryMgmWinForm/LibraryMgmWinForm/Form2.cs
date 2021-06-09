@@ -60,13 +60,76 @@ namespace LibraryMgmWinForm
         private void displayUserInUserListBox()
         {
 
-            stdntListBox.DataSource = new BindingSource(userInfo, null);
-            stdntListBox.ValueMember = "Key";
+            userListBox.DataSource = new BindingSource(userInfo, null);
+            userListBox.ValueMember = "Key";
         }
 
-        private void stdntListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void userListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (userInfo.ContainsKey(userListBox.SelectedValue.ToString()))
+                selectedUser = userInfo[userListBox.SelectedValue.ToString()];
+
+
+
+            if (userInfo.ContainsKey(userListBox.SelectedValue.ToString()))
+                userInfo[userListBox.SelectedValue.ToString()] = selectedUser;
+
+  
+
+
+
+
+    }
+
+        private void confirmRentButton_Click(object sender, EventArgs e)
+        {
+            selectedUser.IssueItems.Add(Program.storedItem);
+
+
+            var temppath = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
+            List<string> templist = File.ReadAllLines(temppath).ToList();
+
+
+            foreach (string tl in templist.ToList())
+            {
+                
+
+                if (tl.StartsWith(selectedUser.Id.ToString()))
+                {
+             
+                    int index = templist.FindIndex(x => x.StartsWith(selectedUser.Id.ToString()));
+                    templist.RemoveAt(index);
+
+                   
+
+
+                    string update = string.Format("{0},{1},{2},{3},[]{4}", selectedUser.Id.ToString(), selectedUser.LastName,
+                                  selectedUser.FirstName, selectedUser.Department, String.Join(";", selectedUser.IssueItems)); // must do: update issued list
+
+
+
+                    templist.Add(update);
+
+
+                }
+
+
+               
+            }
+
+            File.WriteAllLines(temppath, templist);
+            //this.FormClosed += new FormClosedEventHandler(confirmFormClosed);
+
+            this.Close();
+        }
+
+        private void confirmFormClosed(object sender, EventArgs e)
         {
 
+           
         }
+
+
+
     }
 }

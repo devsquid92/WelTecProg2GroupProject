@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -169,8 +170,15 @@ namespace LibraryMgmWinForm
 
         private void rentItemButton_Click(object sender, EventArgs e)
         {
+      
+            Program.storedItem = string.Format("{0},{1},{2},{3},{4}", selectedItem.Title, selectedItem.Isbn,
+                                    selectedItem.Author, selectedItem.YearPublished, selectedItem.Category);
+
             Form2 f2 = new Form2();
+            
             f2.Show();
         }
+
+  
     }
 }

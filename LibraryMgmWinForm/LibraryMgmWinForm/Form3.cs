@@ -131,71 +131,29 @@ namespace LibraryMgmWinForm
             List<string> templist = File.ReadAllLines(temppath).ToList();
 
 
-            foreach(string tl in templist.ToArray())
+            foreach (string tl in templist.ToArray())
             {
-                string[] getline = tl.Split(',');
 
-                if (tl.StartsWith(selectedUser.Id.ToString()) 
-                    && (Program.editUserInfoId != selectedUser.Id.ToString()))
+
+                if (tl.StartsWith(selectedUser.Id.ToString()))
+
                 {
                     int index = templist.FindIndex(x => x.StartsWith(selectedUser.Id.ToString()));
                     templist.RemoveAt(index);
 
+                    
+
                     File.WriteAllLines(temppath, templist);
 
-                    var test = tl.Replace(getline[0], Program.editUserInfoId);
-                    File.AppendAllText(temppath, test);
+                    string update = string.Format("{0},{1},{2},{3},{4}", Program.editUserInfoId, Program.editUserInfoLName,
+                                    Program.editUserInfoFName, Program.editUserInfoDepartment, selectedUser.IssueItems); // must do: update issued list
+
+
+
+                    File.AppendAllText(temppath, update);
 
                 }
-
-                //else 
-                //if (tl.StartsWith(selectedUser.FirstName)
-                //    && (Program.editUserInfoId != selectedUser.FirstName))
-                //    {
-                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.FirstName));
-                //        templist.RemoveAt(index);
-
-                //        File.WriteAllLines(temppath, templist);
-
-                //        var test = tl.Replace(getline[2], Program.editUserInfoFName);
-                //        File.AppendAllText(temppath, test);
-
-                //    }
-
-                //    else 
-                //    if (tl.StartsWith(selectedUser.LastName)
-                //        && (Program.editUserInfoId != selectedUser.LastName))
-                //    {
-                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.LastName));
-                //        templist.RemoveAt(index);
-
-                //        File.WriteAllLines(temppath, templist);
-
-                //        var test = tl.Replace(getline[1], Program.editUserInfoLName);
-                //        File.AppendAllText(temppath, test);
-
-                //    }
-
-                //    else 
-                //    if (tl.StartsWith(selectedUser.Department)
-                //         && (Program.editUserInfoId != selectedUser.Department))
-                //    {
-                //        int index = templist.FindIndex(x => x.StartsWith(selectedUser.Department));
-                //        templist.RemoveAt(index);
-
-                //        File.WriteAllLines(temppath, templist);
-
-                //        var test = tl.Replace(getline[3], Program.editUserInfoDepartment);
-                //        File.AppendAllText(temppath, test);
-
-                //    }
-
-
-
-
             }
-
-
         }
     }
 }

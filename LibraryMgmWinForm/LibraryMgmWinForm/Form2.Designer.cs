@@ -34,7 +34,7 @@ namespace LibraryMgmWinForm
             this.ctgryTextBox = new System.Windows.Forms.TextBox();
             this.rentResultLabel = new System.Windows.Forms.Label();
             this.confirmRentButton = new System.Windows.Forms.Button();
-            this.stdntListBox = new System.Windows.Forms.ListBox();
+            this.userListBox = new System.Windows.Forms.ListBox();
             this.filterRentLabel = new System.Windows.Forms.Label();
             this.searchRentBox = new System.Windows.Forms.TextBox();
             this.searchRentLabel = new System.Windows.Forms.Label();
@@ -65,16 +65,17 @@ namespace LibraryMgmWinForm
             this.confirmRentButton.TabIndex = 31;
             this.confirmRentButton.Text = "Confirm";
             this.confirmRentButton.UseVisualStyleBackColor = true;
+            this.confirmRentButton.Click += new System.EventHandler(this.confirmRentButton_Click);
             // 
-            // stdntListBox
+            // userListBox
             // 
-            this.stdntListBox.FormattingEnabled = true;
-            this.stdntListBox.ItemHeight = 15;
-            this.stdntListBox.Location = new System.Drawing.Point(12, 56);
-            this.stdntListBox.Name = "stdntListBox";
-            this.stdntListBox.Size = new System.Drawing.Size(301, 259);
-            this.stdntListBox.TabIndex = 28;
-            this.stdntListBox.SelectedIndexChanged += new System.EventHandler(this.stdntListBox_SelectedIndexChanged);
+            this.userListBox.FormattingEnabled = true;
+            this.userListBox.ItemHeight = 15;
+            this.userListBox.Location = new System.Drawing.Point(12, 56);
+            this.userListBox.Name = "userListBox";
+            this.userListBox.Size = new System.Drawing.Size(301, 259);
+            this.userListBox.TabIndex = 28;
+            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
             // 
             // filterRentLabel
             // 
@@ -109,13 +110,12 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.ctgryTextBox);
             this.Controls.Add(this.rentResultLabel);
             this.Controls.Add(this.confirmRentButton);
-            this.Controls.Add(this.stdntListBox);
+            this.Controls.Add(this.userListBox);
             this.Controls.Add(this.filterRentLabel);
             this.Controls.Add(this.searchRentBox);
             this.Controls.Add(this.searchRentLabel);
             this.Name = "Form2";
             this.Text = "Issue Item";
-
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,7 +128,7 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.TextBox ctgryTextBox;
         private System.Windows.Forms.Label rentResultLabel;
         private System.Windows.Forms.Button confirmRentButton;
-        private System.Windows.Forms.ListBox stdntListBox;
+        private System.Windows.Forms.ListBox userListBox;
         private System.Windows.Forms.Label filterRentLabel;
         private System.Windows.Forms.TextBox searchRentBox;
         private System.Windows.Forms.Label searchRentLabel;
