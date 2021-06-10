@@ -27,5 +27,10 @@ namespace LibraryMgmWinForm
         {
             this.Close();
         }
+
+        private void addNewItemTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

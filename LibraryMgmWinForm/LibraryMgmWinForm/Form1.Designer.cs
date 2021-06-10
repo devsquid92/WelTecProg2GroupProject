@@ -189,6 +189,7 @@ namespace LibraryMgmWinForm
             this.deleteItemButton.TabIndex = 17;
             this.deleteItemButton.Text = "Delete Item";
             this.deleteItemButton.UseVisualStyleBackColor = true;
+            this.deleteItemButton.Click += new System.EventHandler(this.deleteItemButton_Click);
             // 
             // rentItemButton
             // 

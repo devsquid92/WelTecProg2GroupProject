@@ -57,9 +57,6 @@ namespace LibraryMgmWinForm
         private void displayItemsInListBox()
         {
             itemListBox.DataSource = new BindingSource(itemInfo, null);
-
-            
-
             itemListBox.ValueMember = "Key";
 
         }
@@ -92,14 +89,20 @@ namespace LibraryMgmWinForm
 
         private void addItemFormClosed(object sender, FormClosedEventArgs e)
         {
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv";
+
+            File.AppendAllText(path, Program.newItemName);
+
             if (Program.newItemName != null)
                 itemInfo.Add(Program.newItemName, new Items
                 {
+                    Title = Program.newItemName,
                     Isbn = null,
                     Author = null,
                     YearPublished = 0,
                     Category = null
                 });
+
 
             Program.newItemName = null;
             displayItemsInListBox();
@@ -107,11 +110,35 @@ namespace LibraryMgmWinForm
 
         private void saveEditButton_Click(object sender, EventArgs e)
         {
-            
-            selectedItem.Isbn = isbnTextBox.Text;
-            selectedItem.Author = authorTextBox.Text;
-            selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
-            selectedItem.Category = categoryTextBox.Text;
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv";
+
+
+            List<string> templist = File.ReadAllLines(path).ToList();
+
+            foreach (string list in templist.ToArray())
+            {
+
+                if (list.StartsWith(selectedItem.Title))
+                {
+                    int index = templist.FindIndex(x => x.StartsWith(selectedItem.Title));
+                    templist.RemoveAt(index);
+
+                    File.WriteAllLines(path, templist);
+
+                    selectedItem.Title = titleTextBox.Text;
+                    selectedItem.Isbn = isbnTextBox.Text;
+                    selectedItem.Author = authorTextBox.Text;
+                    selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
+                    selectedItem.Category = categoryTextBox.Text;
+
+
+                    string updline = string.Format("{0},{1},{2},{3},{4}", selectedItem.Title, selectedItem.Isbn, selectedItem.Author, selectedItem.YearPublished, selectedItem.Category);
+
+                    File.AppendAllText(path, updline);
+                }
+            }
+
+            MessageBox.Show("Saved!");
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
@@ -163,7 +190,7 @@ namespace LibraryMgmWinForm
         {
             UserReport ur = new UserReport();
 
-            //ur.FormClosed += new FormClosedEventHandler(addItemFormClosed);
+            
 
             ur.Show();
         }
@@ -171,14 +198,34 @@ namespace LibraryMgmWinForm
         private void rentItemButton_Click(object sender, EventArgs e)
         {
       
-            Program.storedItem = string.Format("{0},{1},{2},{3},{4}", selectedItem.Title, selectedItem.Isbn,
-                                    selectedItem.Author, selectedItem.YearPublished, selectedItem.Category);
+            Program.storedItem = string.Format("{0}-{1}", selectedItem.Title, selectedItem.Isbn);
 
             Form2 f2 = new Form2();
             
             f2.Show();
         }
 
-  
+        private void deleteItemButton_Click(object sender, EventArgs e)
+        {
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv";
+
+
+            List<string> templist = File.ReadAllLines(path).ToList();
+
+            foreach (string list in templist.ToArray())
+            {
+
+                if (list.StartsWith(selectedItem.Title))
+                {
+                    int index = templist.FindIndex(x => x.StartsWith(selectedItem.Title));
+                    templist.RemoveAt(index);
+
+                    File.WriteAllLines(path, templist);
+
+                }
+            }
+
+            MessageBox.Show("Deleted!");
+        }
     }
 }

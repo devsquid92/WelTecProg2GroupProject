@@ -38,26 +38,25 @@ namespace LibraryMgmWinForm
             // addNewItemLabel
             // 
             this.addNewItemLabel.AutoSize = true;
-            this.addNewItemLabel.Location = new System.Drawing.Point(13, 43);
+            this.addNewItemLabel.Location = new System.Drawing.Point(11, 32);
             this.addNewItemLabel.Name = "addNewItemLabel";
-            this.addNewItemLabel.Size = new System.Drawing.Size(220, 20);
+            this.addNewItemLabel.Size = new System.Drawing.Size(176, 15);
             this.addNewItemLabel.TabIndex = 0;
             this.addNewItemLabel.Text = "Enter the name of the new item:";
             // 
             // addNewItemTextBox
             // 
-            this.addNewItemTextBox.Location = new System.Drawing.Point(239, 36);
-            this.addNewItemTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addNewItemTextBox.Location = new System.Drawing.Point(209, 27);
             this.addNewItemTextBox.Name = "addNewItemTextBox";
-            this.addNewItemTextBox.Size = new System.Drawing.Size(258, 27);
+            this.addNewItemTextBox.Size = new System.Drawing.Size(226, 23);
             this.addNewItemTextBox.TabIndex = 1;
+            this.addNewItemTextBox.TextChanged += new System.EventHandler(this.addNewItemTextBox_TextChanged);
             // 
             // addNewItemCancelBtn
             // 
-            this.addNewItemCancelBtn.Location = new System.Drawing.Point(128, 104);
-            this.addNewItemCancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addNewItemCancelBtn.Location = new System.Drawing.Point(112, 78);
             this.addNewItemCancelBtn.Name = "addNewItemCancelBtn";
-            this.addNewItemCancelBtn.Size = new System.Drawing.Size(86, 31);
+            this.addNewItemCancelBtn.Size = new System.Drawing.Size(75, 23);
             this.addNewItemCancelBtn.TabIndex = 2;
             this.addNewItemCancelBtn.Text = "Cancel";
             this.addNewItemCancelBtn.UseVisualStyleBackColor = true;
@@ -65,10 +64,9 @@ namespace LibraryMgmWinForm
             // 
             // addNewItemOkBtn
             // 
-            this.addNewItemOkBtn.Location = new System.Drawing.Point(305, 104);
-            this.addNewItemOkBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addNewItemOkBtn.Location = new System.Drawing.Point(267, 78);
             this.addNewItemOkBtn.Name = "addNewItemOkBtn";
-            this.addNewItemOkBtn.Size = new System.Drawing.Size(86, 31);
+            this.addNewItemOkBtn.Size = new System.Drawing.Size(75, 23);
             this.addNewItemOkBtn.TabIndex = 3;
             this.addNewItemOkBtn.Text = "OK";
             this.addNewItemOkBtn.UseVisualStyleBackColor = true;
@@ -76,14 +74,13 @@ namespace LibraryMgmWinForm
             // 
             // addNewItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 175);
+            this.ClientSize = new System.Drawing.Size(475, 131);
             this.Controls.Add(this.addNewItemOkBtn);
             this.Controls.Add(this.addNewItemCancelBtn);
             this.Controls.Add(this.addNewItemTextBox);
             this.Controls.Add(this.addNewItemLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "addNewItem";
             this.Text = "addNewItem";
             this.ResumeLayout(false);

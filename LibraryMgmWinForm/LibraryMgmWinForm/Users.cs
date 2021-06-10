@@ -28,7 +28,7 @@ namespace LibraryMgmWinForm
                 sb.Length--;
                 sb.Remove(0, 1);
 
-                string[] otherItems = sb.ToString().Split(',');
+                string[] otherItems = sb.ToString().Split(';');
                 issueItems = new List<string>(otherItems);
                 issueItems.Sort();
             }

@@ -90,25 +90,31 @@ namespace LibraryMgmWinForm
             List<string> templist = File.ReadAllLines(temppath).ToList();
 
 
-            foreach (string tl in templist.ToList())
+            foreach (string tl in templist.ToArray())
             {
-                
 
-                if (tl.StartsWith(selectedUser.Id.ToString()))
+
+                if (Program.storedItem != null)
                 {
              
                     int index = templist.FindIndex(x => x.StartsWith(selectedUser.Id.ToString()));
                     templist.RemoveAt(index);
 
-                   
 
 
-                    string update = string.Format("{0},{1},{2},{3},[]{4}", selectedUser.Id.ToString(), selectedUser.LastName,
-                                  selectedUser.FirstName, selectedUser.Department, String.Join(";", selectedUser.IssueItems)); // must do: update issued list
+                    if (selectedUser.IssueItems.Count > 0)
+                    {
+                        StringBuilder stb = new StringBuilder();
+                        foreach (var item in selectedUser.IssueItems)
+                        {
+                            stb.Append(item).Append(';');
+                        }
 
 
-
-                    templist.Add(update);
+                        string update = string.Format("{0},{1},{2},{3},{4}", selectedUser.Id.ToString(), selectedUser.LastName,
+                                                                            selectedUser.FirstName, selectedUser.Department, "[" + stb.ToString().TrimStart(';') + "]");
+                        templist.Add(update);   // must do: update issued list
+                    }
 
 
                 }
@@ -118,18 +124,25 @@ namespace LibraryMgmWinForm
             }
 
             File.WriteAllLines(temppath, templist);
-            //this.FormClosed += new FormClosedEventHandler(confirmFormClosed);
 
             this.Close();
-        }
-
-        private void confirmFormClosed(object sender, EventArgs e)
-        {
-
-           
         }
 
 
 
     }
 }
+
+
+//if (users.IssueItems.Count > 0)
+//{
+//    StringBuilder stb = new StringBuilder();
+//    foreach (var item in users.IssueItems)
+//    {
+//        stb.Append(item).Append(";");
+//    }
+
+//    return stb.ToString();
+//}
+
+//else
