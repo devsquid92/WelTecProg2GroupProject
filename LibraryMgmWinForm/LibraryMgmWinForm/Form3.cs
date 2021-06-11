@@ -171,5 +171,50 @@ namespace LibraryMgmWinForm
 
         File.WriteAllLines(temppath, templist);
         }
+
+        private void searchUserMgmTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchUserMgmTextBox.Text != "")
+            {
+                if (searchUserMgmTextBox.Text.Length == 1)
+                {
+                    searchUserMgmTextBox.Text = searchUserMgmTextBox.Text.ToString().ToUpper();
+                    searchUserMgmTextBox.Select(searchUserMgmTextBox.Text.Length, 0);
+                }
+
+
+                var filtered = userInfo.
+                    Where(i => i.Key.Contains(searchUserMgmTextBox.Text)).ToDictionary(i => i.Key, i => i.Value);
+
+                if (filtered.Count > 0)
+                {
+                    userMgmtListBox.DataSource = new BindingSource(filtered, null);
+                    userMgmtListBox.ValueMember = "Key";
+
+
+                    noResultLabel.Visible = false;
+
+                    searchResultLabel.Visible = true;
+
+                    if (filtered.Count == 1)
+                        searchResultLabel.Text = "Search Result(s): " + filtered.Count;
+
+                    else
+                        searchResultLabel.Text = "Search Result(s): " + filtered.Count;
+                }
+                else
+                {
+                    noResultLabel.Visible = true;
+
+                    searchResultLabel.Visible = false;
+                }
+            }
+
+            else
+            {
+                displayUserInUserListBox();
+                searchResultLabel.Visible = noResultLabel.Visible = false;
+            }
+        }
     }
 }

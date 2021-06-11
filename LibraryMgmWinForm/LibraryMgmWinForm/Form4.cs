@@ -46,7 +46,6 @@ namespace LibraryMgmWinForm
 
                 issuedListBox.DataSource = Program.showIssuedItems;
 
-                selectedUserKey.Text = Program.selectKey;
             }
         }
 
