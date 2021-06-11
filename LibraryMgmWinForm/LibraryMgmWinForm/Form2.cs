@@ -43,6 +43,7 @@ namespace LibraryMgmWinForm
                         FirstName = info[2],
                         Department = info[3],
                         issItems = info[4]
+                        
 
                     });
 
@@ -83,11 +84,13 @@ namespace LibraryMgmWinForm
 
         private void confirmRentButton_Click(object sender, EventArgs e)
         {
-            selectedUser.IssueItems.Add(Program.storedItem);
+            selectedUser.IssueItems.Add(Program.storedItem + "-" + selectedUser.GetDueDate());
+            
 
 
             var temppath = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
             List<string> templist = File.ReadAllLines(temppath).ToList();
+
 
 
             foreach (string tl in templist.ToArray())
@@ -111,8 +114,11 @@ namespace LibraryMgmWinForm
                         }
 
 
+
                         string update = string.Format("{0},{1},{2},{3},{4}", selectedUser.Id.ToString(), selectedUser.LastName,
-                                                                            selectedUser.FirstName, selectedUser.Department, "[" + stb.ToString().TrimStart(';') + "]");
+                        selectedUser.FirstName, selectedUser.Department, "[" + stb.ToString().TrimStart(';') + "]");
+
+
                         templist.Add(update);   // must do: update issued list
                     }
 
@@ -132,17 +138,3 @@ namespace LibraryMgmWinForm
 
     }
 }
-
-
-//if (users.IssueItems.Count > 0)
-//{
-//    StringBuilder stb = new StringBuilder();
-//    foreach (var item in users.IssueItems)
-//    {
-//        stb.Append(item).Append(";");
-//    }
-
-//    return stb.ToString();
-//}
-
-//else

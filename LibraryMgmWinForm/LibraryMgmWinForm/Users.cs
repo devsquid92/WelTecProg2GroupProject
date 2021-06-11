@@ -43,5 +43,21 @@ namespace LibraryMgmWinForm
             }
         }
 
+        private int DueDay
+        {
+            get
+            {
+                int i = 7;
+                return i;
+            }
+        }
+
+        public DateTime GetDueDate()
+        {
+            DateTime dd = DateTime.Now;
+            dd += new TimeSpan(DueDay, 23 - dd.Hour, 59 - dd.Minute, 59 - dd.Second, 999 - dd.Millisecond);
+            return dd;
+        }
+
     }
 }
