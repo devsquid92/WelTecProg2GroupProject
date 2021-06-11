@@ -35,6 +35,9 @@ namespace LibraryMgmWinForm
             Program.newUserLName = addLNameUserMgmTextBox.Text;
             Program.newUserDept = addDeptUserMgmTextBox.Text;
             this.Close();
+
+            UserReport ur = new UserReport();
+            ur.Show();
         }
 
         private void addNewUserCancelMgmButton_Click(object sender, EventArgs e)

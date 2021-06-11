@@ -66,12 +66,14 @@ namespace LibraryMgmWinForm
 
             userMgmtListBox.DataSource = new BindingSource(userInfo, null);
             userMgmtListBox.ValueMember = "Key";
+
         }
 
 
         private void userMgmtListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-    
+     
+
             if (userInfo.ContainsKey(userMgmtListBox.SelectedValue.ToString()))
                 selectedUser = userInfo[userMgmtListBox.SelectedValue.ToString()];
 
@@ -83,6 +85,10 @@ namespace LibraryMgmWinForm
             Program.showUserInfoLName = selectedUser.LastName;
             Program.showUserInfoDepartment = selectedUser.Department;
 
+
+
+
+
         }
 
         private void addNewUserMgmButton_Click(object sender, EventArgs e)
@@ -91,13 +97,15 @@ namespace LibraryMgmWinForm
 
             anu.FormClosed += new FormClosedEventHandler(addNewUserFormClosed);
 
+            this.Close();
             anu.Show();
+            
         }
 
         void addNewUserFormClosed(object sender, FormClosedEventArgs e)
         {
             var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Users.csv";
-
+            
             if (Program.newUserId != null)
             {
                 string[] nextline = new string[]
@@ -110,11 +118,12 @@ namespace LibraryMgmWinForm
             }
 
             Program.newUserId = null;
-            displayUserInUserListBox();
+            
         }
 
         private void userRepViewButton_Click(object sender, EventArgs e)
         {
+
             Form4 f4 = new Form4();
             f4.FormClosed += new FormClosedEventHandler(viewUserInfoFormClosed);
 
@@ -135,25 +144,32 @@ namespace LibraryMgmWinForm
             {
 
 
-                if (tl.StartsWith(selectedUser.Id.ToString()))
+                if (Program.editUserInfoId != null && Program.editUserInfoLName != null &&
+                   Program.editUserInfoFName != null && Program.editUserInfoDepartment != null)
 
                 {
                     int index = templist.FindIndex(x => x.StartsWith(selectedUser.Id.ToString()));
                     templist.RemoveAt(index);
 
-                    
+                        StringBuilder stb = new StringBuilder();
+                        foreach (var item in selectedUser.IssueItems)
+                        {
+                            stb.Append(item).Append(';');
 
-                    File.WriteAllLines(temppath, templist);
+                            string update = string.Format("{0},{1},{2},{3},{4}", Program.editUserInfoId, Program.editUserInfoLName,
+                                   Program.editUserInfoFName, Program.editUserInfoDepartment, "[" + stb.ToString().TrimStart(';') + "]");
 
-                    string update = string.Format("{0},{1},{2},{3},{4}", Program.editUserInfoId, Program.editUserInfoLName,
-                                    Program.editUserInfoFName, Program.editUserInfoDepartment, selectedUser.IssueItems); // must do: update issued list
-
-
-
-                    File.AppendAllText(temppath, update);
+                            templist.Add(update);
+                        }
 
                 }
             }
+
+            Program.editUserInfoId = null;
+
+
+
+        File.WriteAllLines(temppath, templist);
         }
     }
 }

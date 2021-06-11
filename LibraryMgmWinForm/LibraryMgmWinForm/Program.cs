@@ -25,16 +25,13 @@ namespace LibraryMgmWinForm
         public static string showUserInfoFName;
         public static string showUserInfoLName;
         public static string showUserInfoDepartment;
-
         public static List<string> showIssuedItems;
-
 
 
         public static string editUserInfoId;
         public static string editUserInfoFName;
         public static string editUserInfoLName;
         public static string editUserInfoDepartment;
-
         public static string storedItem;
         
 

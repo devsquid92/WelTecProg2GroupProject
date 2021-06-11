@@ -39,11 +39,12 @@ namespace LibraryMgmWinForm
             this.issuedListBox = new System.Windows.Forms.ListBox();
             this.stdntInfoPenaltyAmountLabel = new System.Windows.Forms.Label();
             this.stdntInfoPayButton = new System.Windows.Forms.Button();
-            this.stdntInfoRecieveItemButton = new System.Windows.Forms.Button();
+            this.userInfoRecieveItemButton = new System.Windows.Forms.Button();
             this.stndtInfoBorrowedLabel = new System.Windows.Forms.Label();
             this.stdntInfoDueByLabel = new System.Windows.Forms.Label();
             this.userInfoDeparmentTextBox = new System.Windows.Forms.TextBox();
             this.stdntDepartmentLabel = new System.Windows.Forms.Label();
+            this.selectedUserKey = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // userInfoSaveButton
@@ -133,14 +134,15 @@ namespace LibraryMgmWinForm
             this.stdntInfoPayButton.Text = "Pay an amount";
             this.stdntInfoPayButton.UseVisualStyleBackColor = true;
             // 
-            // stdntInfoRecieveItemButton
+            // userInfoRecieveItemButton
             // 
-            this.stdntInfoRecieveItemButton.Location = new System.Drawing.Point(107, 411);
-            this.stdntInfoRecieveItemButton.Name = "stdntInfoRecieveItemButton";
-            this.stdntInfoRecieveItemButton.Size = new System.Drawing.Size(91, 37);
-            this.stdntInfoRecieveItemButton.TabIndex = 39;
-            this.stdntInfoRecieveItemButton.Text = "Receive Item";
-            this.stdntInfoRecieveItemButton.UseVisualStyleBackColor = true;
+            this.userInfoRecieveItemButton.Location = new System.Drawing.Point(107, 411);
+            this.userInfoRecieveItemButton.Name = "userInfoRecieveItemButton";
+            this.userInfoRecieveItemButton.Size = new System.Drawing.Size(91, 37);
+            this.userInfoRecieveItemButton.TabIndex = 39;
+            this.userInfoRecieveItemButton.Text = "Receive Item";
+            this.userInfoRecieveItemButton.UseVisualStyleBackColor = true;
+            this.userInfoRecieveItemButton.Click += new System.EventHandler(this.userInfoRecieveItemButton_Click);
             // 
             // stndtInfoBorrowedLabel
             // 
@@ -176,16 +178,26 @@ namespace LibraryMgmWinForm
             this.stdntDepartmentLabel.TabIndex = 42;
             this.stdntDepartmentLabel.Text = "Department";
             // 
+            // selectedUserKey
+            // 
+            this.selectedUserKey.AutoSize = true;
+            this.selectedUserKey.Location = new System.Drawing.Point(375, 13);
+            this.selectedUserKey.Name = "selectedUserKey";
+            this.selectedUserKey.Size = new System.Drawing.Size(26, 15);
+            this.selectedUserKey.TabIndex = 44;
+            this.selectedUserKey.Text = "Key";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 473);
+            this.Controls.Add(this.selectedUserKey);
             this.Controls.Add(this.userInfoDeparmentTextBox);
             this.Controls.Add(this.stdntDepartmentLabel);
             this.Controls.Add(this.stdntInfoDueByLabel);
             this.Controls.Add(this.stndtInfoBorrowedLabel);
-            this.Controls.Add(this.stdntInfoRecieveItemButton);
+            this.Controls.Add(this.userInfoRecieveItemButton);
             this.Controls.Add(this.stdntInfoPayButton);
             this.Controls.Add(this.stdntInfoPenaltyAmountLabel);
             this.Controls.Add(this.issuedListBox);
@@ -216,10 +228,11 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.ListBox issuedListBox;
         private System.Windows.Forms.Label stdntInfoPenaltyAmountLabel;
         private System.Windows.Forms.Button stdntInfoPayButton;
-        private System.Windows.Forms.Button stdntInfoRecieveItemButton;
+        private System.Windows.Forms.Button userInfoRecieveItemButton;
         private System.Windows.Forms.Label stndtInfoBorrowedLabel;
         private System.Windows.Forms.Label stdntInfoDueByLabel;
         private System.Windows.Forms.TextBox userInfoDeparmentTextBox;
         private System.Windows.Forms.Label stdntDepartmentLabel;
+        private System.Windows.Forms.Label selectedUserKey;
     }
 }
