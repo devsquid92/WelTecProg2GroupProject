@@ -18,11 +18,13 @@ namespace LibraryMgmWinForm
 
         Items selectedItem = new Items();
 
+        bool isbn, title, author, year, category;
+
         public LibraryManagement()
         {
             InitializeComponent();
 
-            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv"; 
+            var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv";
             string[] lines = System.IO.File.ReadAllLines(path);
 
             foreach (string line in lines)
@@ -51,6 +53,8 @@ namespace LibraryMgmWinForm
 
         private void refreshForm()
         {
+            isbnOKLabel.Visible = false;
+            isbnInvalidLabel.Visible = false;
             displayItemsInListBox();
         }
 
@@ -63,18 +67,94 @@ namespace LibraryMgmWinForm
 
         private void itemListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            Validation valid = new Validation();
+
+
             if (itemInfo.ContainsKey(itemListBox.SelectedValue.ToString()))
                 selectedItem = itemInfo[itemListBox.SelectedValue.ToString()];
+
+
+            isbn = valid.validateNum(isbnTextBox.Text);
+            title = valid.validateString(titleTextBox.Text);
+            author = valid.validateString(authorTextBox.Text);
+            year = valid.validateNum(yearTextBox.Text);
+            category = valid.validateString(categoryTextBox.Text);
 
 
             avaLabel.Text = itemListBox.Items.Count.ToString();
 
 
+            if (isbn && isbnTextBox.Text != " ")
+            {
+                isbnOKLabel.Visible = true;
+                isbnInvalidLabel.Visible = false;
+
+            }
+            else if (!isbn && isbnTextBox.Text != " ")
+            {
+                isbnInvalidLabel.Visible = true;
+                isbnOKLabel.Visible = false;
+            }
+
+
+            if (title && titleTextBox.Text != " ")
+            {
+                titleOKLabel.Visible = true;
+                titleInvalidLabel.Visible = false;
+
+            }
+            else if (!title && titleTextBox.Text != " ")
+            {
+                titleOKLabel.Visible = false;
+                titleInvalidLabel.Visible = true;
+            }
+
+            if (author && authorTextBox.Text != " ")
+            {
+                authorOKLabel.Visible = true;
+                authorInvalidLabel.Visible = false;
+
+            }
+            else if (!author && authorTextBox.Text != " ")
+            {
+                authorOKLabel.Visible = false;
+                authorInvalidLabel.Visible = true;
+            }
+
+
+            if (year && yearTextBox.Text != " ")
+            {
+                yearOKLabel.Visible = true;
+                yearInvalidLabel.Visible = false;
+
+            }
+            else if (!year && yearTextBox.Text != " ")
+            {
+                yearOKLabel.Visible = false;
+                yearInvalidLabel.Visible = true;
+            }
+
+            if (category && categoryTextBox.Text != " ")
+            {
+                categoryOKLabel.Visible = true;
+                categoryInvalidLabel.Visible = false;
+
+            }
+            else if (!category && isbnTextBox.Text != " ")
+            {
+                categoryOKLabel.Visible = false;
+                categoryInvalidLabel.Visible = true;
+            }
+
 
             isbnTextBox.Text = selectedItem.Isbn;
+
             titleTextBox.Text = selectedItem.Title;
+
             authorTextBox.Text = selectedItem.Author;
+
             yearTextBox.Text = selectedItem.YearPublished.ToString();
+
             categoryTextBox.Text = selectedItem.Category;
         }
 
@@ -108,38 +188,55 @@ namespace LibraryMgmWinForm
             displayItemsInListBox();
         }
 
+        
+
         private void saveEditButton_Click(object sender, EventArgs e)
         {
             var path = @"C:\Users\jmram\source\repos\WelTecProg2GroupProject\LibraryMgmWinForm\LibraryMgmWinForm\datafiles\Items.csv";
 
 
-            List<string> templist = File.ReadAllLines(path).ToList();
+        if (isbn && title && author && year && category)
+        {
 
-            foreach (string list in templist.ToArray())
-            {
+                List<string> templist = File.ReadAllLines(path).ToList();
 
-                if (list.StartsWith(selectedItem.Title))
+                foreach (string list in templist.ToArray())
                 {
-                    int index = templist.FindIndex(x => x.StartsWith(selectedItem.Title));
-                    templist.RemoveAt(index);
-
-                    File.WriteAllLines(path, templist);
-
-                    selectedItem.Title = titleTextBox.Text;
-                    selectedItem.Isbn = isbnTextBox.Text;
-                    selectedItem.Author = authorTextBox.Text;
-                    selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
-                    selectedItem.Category = categoryTextBox.Text;
 
 
-                    string updline = string.Format("{0},{1},{2},{3},{4}", selectedItem.Title, selectedItem.Isbn, selectedItem.Author, selectedItem.YearPublished, selectedItem.Category);
+                    if (list.StartsWith(selectedItem.Title))
+                    {
 
-                    File.AppendAllText(path, updline);
+
+                        int index = templist.FindIndex(x => x.StartsWith(selectedItem.Title));
+                        templist.RemoveAt(index);
+
+                        File.WriteAllLines(path, templist);
+
+                        selectedItem.Title = titleTextBox.Text;
+                        selectedItem.Isbn = isbnTextBox.Text;
+                        selectedItem.Author = authorTextBox.Text;
+                        selectedItem.YearPublished = Int32.Parse(yearTextBox.Text);
+                        selectedItem.Category = categoryTextBox.Text;
+
+
+                        string updline = string.Format("{0},{1},{2},{3},{4}", selectedItem.Title, selectedItem.Isbn, selectedItem.Author, selectedItem.YearPublished, selectedItem.Category);
+
+                        File.AppendAllText(path, updline);
+
+
+                    }
                 }
+
+                MessageBox.Show("Saved!");
             }
 
-            MessageBox.Show("Saved!");
+        else
+                MessageBox.Show("Please clear the invalid box");
+
+
         }
+
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {

@@ -53,6 +53,16 @@ namespace LibraryMgmWinForm
             this.ctgryTextBox = new System.Windows.Forms.TextBox();
             this.noSearchResultLabel = new System.Windows.Forms.Label();
             this.avaLabel = new System.Windows.Forms.Label();
+            this.isbnOKLabel = new System.Windows.Forms.Label();
+            this.isbnInvalidLabel = new System.Windows.Forms.Label();
+            this.titleOKLabel = new System.Windows.Forms.Label();
+            this.yearOKLabel = new System.Windows.Forms.Label();
+            this.categoryOKLabel = new System.Windows.Forms.Label();
+            this.authorOKLabel = new System.Windows.Forms.Label();
+            this.titleInvalidLabel = new System.Windows.Forms.Label();
+            this.authorInvalidLabel = new System.Windows.Forms.Label();
+            this.yearInvalidLabel = new System.Windows.Forms.Label();
+            this.categoryInvalidLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // searchLabel
@@ -138,7 +148,7 @@ namespace LibraryMgmWinForm
             // 
             this.titleTextBox.Location = new System.Drawing.Point(437, 129);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(236, 23);
+            this.titleTextBox.Size = new System.Drawing.Size(197, 23);
             this.titleTextBox.TabIndex = 11;
             // 
             // yearTextBox
@@ -264,11 +274,117 @@ namespace LibraryMgmWinForm
             this.avaLabel.TabIndex = 26;
             this.avaLabel.Text = "Available";
             // 
+            // isbnOKLabel
+            // 
+            this.isbnOKLabel.AutoSize = true;
+            this.isbnOKLabel.ForeColor = System.Drawing.Color.Green;
+            this.isbnOKLabel.Location = new System.Drawing.Point(546, 103);
+            this.isbnOKLabel.Name = "isbnOKLabel";
+            this.isbnOKLabel.Size = new System.Drawing.Size(23, 15);
+            this.isbnOKLabel.TabIndex = 28;
+            this.isbnOKLabel.Text = "OK";
+            // 
+            // isbnInvalidLabel
+            // 
+            this.isbnInvalidLabel.AutoSize = true;
+            this.isbnInvalidLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.isbnInvalidLabel.Location = new System.Drawing.Point(543, 103);
+            this.isbnInvalidLabel.Name = "isbnInvalidLabel";
+            this.isbnInvalidLabel.Size = new System.Drawing.Size(42, 15);
+            this.isbnInvalidLabel.TabIndex = 29;
+            this.isbnInvalidLabel.Text = "Invalid";
+            // 
+            // titleOKLabel
+            // 
+            this.titleOKLabel.AutoSize = true;
+            this.titleOKLabel.ForeColor = System.Drawing.Color.Green;
+            this.titleOKLabel.Location = new System.Drawing.Point(640, 132);
+            this.titleOKLabel.Name = "titleOKLabel";
+            this.titleOKLabel.Size = new System.Drawing.Size(23, 15);
+            this.titleOKLabel.TabIndex = 30;
+            this.titleOKLabel.Text = "OK";
+            // 
+            // yearOKLabel
+            // 
+            this.yearOKLabel.AutoSize = true;
+            this.yearOKLabel.ForeColor = System.Drawing.Color.Green;
+            this.yearOKLabel.Location = new System.Drawing.Point(523, 189);
+            this.yearOKLabel.Name = "yearOKLabel";
+            this.yearOKLabel.Size = new System.Drawing.Size(23, 15);
+            this.yearOKLabel.TabIndex = 31;
+            this.yearOKLabel.Text = "OK";
+            // 
+            // categoryOKLabel
+            // 
+            this.categoryOKLabel.AutoSize = true;
+            this.categoryOKLabel.ForeColor = System.Drawing.Color.Green;
+            this.categoryOKLabel.Location = new System.Drawing.Point(523, 218);
+            this.categoryOKLabel.Name = "categoryOKLabel";
+            this.categoryOKLabel.Size = new System.Drawing.Size(23, 15);
+            this.categoryOKLabel.TabIndex = 32;
+            this.categoryOKLabel.Text = "OK";
+            // 
+            // authorOKLabel
+            // 
+            this.authorOKLabel.AutoSize = true;
+            this.authorOKLabel.ForeColor = System.Drawing.Color.Green;
+            this.authorOKLabel.Location = new System.Drawing.Point(608, 161);
+            this.authorOKLabel.Name = "authorOKLabel";
+            this.authorOKLabel.Size = new System.Drawing.Size(23, 15);
+            this.authorOKLabel.TabIndex = 33;
+            this.authorOKLabel.Text = "OK";
+            // 
+            // titleInvalidLabel
+            // 
+            this.titleInvalidLabel.AutoSize = true;
+            this.titleInvalidLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.titleInvalidLabel.Location = new System.Drawing.Point(640, 132);
+            this.titleInvalidLabel.Name = "titleInvalidLabel";
+            this.titleInvalidLabel.Size = new System.Drawing.Size(42, 15);
+            this.titleInvalidLabel.TabIndex = 34;
+            this.titleInvalidLabel.Text = "Invalid";
+            // 
+            // authorInvalidLabel
+            // 
+            this.authorInvalidLabel.AutoSize = true;
+            this.authorInvalidLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.authorInvalidLabel.Location = new System.Drawing.Point(608, 161);
+            this.authorInvalidLabel.Name = "authorInvalidLabel";
+            this.authorInvalidLabel.Size = new System.Drawing.Size(42, 15);
+            this.authorInvalidLabel.TabIndex = 35;
+            this.authorInvalidLabel.Text = "Invalid";
+
+            // 
+            // yearInvalidLabel
+            // 
+            this.yearInvalidLabel.AutoSize = true;
+            this.yearInvalidLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.yearInvalidLabel.Location = new System.Drawing.Point(527, 189);
+            this.yearInvalidLabel.Name = "yearInvalidLabel";
+            this.yearInvalidLabel.Size = new System.Drawing.Size(42, 15);
+            this.yearInvalidLabel.TabIndex = 36;
+            this.yearInvalidLabel.Text = "Invalid";
+            // 
+            // categoryInvalidLabel
+            // 
+            this.categoryInvalidLabel.AutoSize = true;
+            this.categoryInvalidLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.categoryInvalidLabel.Location = new System.Drawing.Point(527, 218);
+            this.categoryInvalidLabel.Name = "categoryInvalidLabel";
+            this.categoryInvalidLabel.Size = new System.Drawing.Size(42, 15);
+            this.categoryInvalidLabel.TabIndex = 37;
+            this.categoryInvalidLabel.Text = "Invalid";
+            // 
             // LibraryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 402);
+            this.Controls.Add(this.authorOKLabel);
+            this.Controls.Add(this.categoryOKLabel);
+            this.Controls.Add(this.yearOKLabel);
+            this.Controls.Add(this.titleOKLabel);
+            this.Controls.Add(this.isbnOKLabel);
             this.Controls.Add(this.avaLabel);
             this.Controls.Add(this.ctgryTextBox);
             this.Controls.Add(this.searchResultLabel);
@@ -293,6 +409,11 @@ namespace LibraryMgmWinForm
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.noSearchResultLabel);
+            this.Controls.Add(this.isbnInvalidLabel);
+            this.Controls.Add(this.titleInvalidLabel);
+            this.Controls.Add(this.authorInvalidLabel);
+            this.Controls.Add(this.yearInvalidLabel);
+            this.Controls.Add(this.categoryInvalidLabel);
             this.Name = "LibraryManagement";
             this.Text = "LibraryManagement - Admin";
             this.ResumeLayout(false);
@@ -326,6 +447,16 @@ namespace LibraryMgmWinForm
         private System.Windows.Forms.TextBox ctgryTextBox;
         private System.Windows.Forms.Label noSearchResultLabel;
         private System.Windows.Forms.Label avaLabel;
+        private System.Windows.Forms.Label isbnOKLabel;
+        private System.Windows.Forms.Label isbnInvalidLabel;
+        private System.Windows.Forms.Label titleOKLabel;
+        private System.Windows.Forms.Label yearOKLabel;
+        private System.Windows.Forms.Label categoryOKLabel;
+        private System.Windows.Forms.Label authorOKLabel;
+        private System.Windows.Forms.Label titleInvalidLabel;
+        private System.Windows.Forms.Label authorInvalidLabel;
+        private System.Windows.Forms.Label yearInvalidLabel;
+        private System.Windows.Forms.Label categoryInvalidLabel;
     }
 }
 
