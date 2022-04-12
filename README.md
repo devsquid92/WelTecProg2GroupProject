@@ -1,4 +1,4 @@
-# Programming2Project(WelTec)*/
+# Programming2Project(WelTec)
 Developed through Visual Studio 2019 Windows Form
 
 # Working as expected though there are some limitations as follows.
