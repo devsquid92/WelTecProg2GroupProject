@@ -1,5 +1,5 @@
-# WelTecProg2GroupProject
-# Developed through Visual Studio 2019 Windows Form
+# Programming2Project(WelTec)*/
+Developed through Visual Studio 2019 Windows Form
 
 # Working as expected though there are some limitations as follows.
 - Category for search is there but not really used for anything. It was supposed to be a DropDown list to narrow search.
